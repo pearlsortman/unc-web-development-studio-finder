@@ -1,27 +1,159 @@
 body {
-	background: #130817;
-	color: white;
+	background-image: url("http://i61.tinypic.com/k3noyu.jpg");
+	background-attachment: fixed;
+	color: #1B0040;
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	text-align: center;
 }
 
+div{
+	background: rgba(255,255,255,0.25);
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	margin: 10px 100px 10px 100px;
+	padding: 10px;
+}
+
+
+.description, .header{
+	
+	background: none;
+
+}
+
+.header{
+	color: white;
+}
+
+.container{
+	background: none;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+
 h1 {
-	font-size: 4em;
+	font-size: 3em;
 }
 
 h2 {
-	font-size: 3em;
+	font-size: 2.5em;
 }
 
 h3 {
 	font-size: 2em;
 }
 
+h4{
+	font-size: 1.25em;
+}
+
 ul {
 	padding: 0px;
 	margin: 0px;
+	display: inline;
 }
 
 li {
 	list-style-type: none;
+}
+
+/*CREATOR STYLE*/
+
+.ch-item {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    cursor: default;
+    perspective: 900px;
+}
+
+.ch-info{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.ch-info > div {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-position: center center;
+    transition: all 0.4s linear;
+    transform-origin: 50% 0%;
+}
+
+.ch-info .ch-info-front {
+    box-shadow: inset 0 0 0 16px rgba(0,0,0,0.3);
+}
+
+.ch-info .ch-info-back {
+    transform: translate3d(0,0,-220px) rotate3d(1,0,0,90deg);
+    background: #000;
+    opacity: 0;
+}
+
+.ch-img-1 { 
+    background-image: url(kwon.jpg);
+}
+
+.ch-img-2{ 
+    background-image: url(sortman.jpg);
+}
+
+.ch-img-3 { 
+    background-image: url(walker.jpg);
+}
+
+.ch-info h3 {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 24px;
+    margin: 0 15px;
+    padding: 60px 0 0 0;
+    height: 110px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-shadow: 
+        0 0 1px #fff, 
+        0 1px 2px rgba(0,0,0,0.3);
+}
+ 
+.ch-info p {
+    color: #fff;
+    padding: 10px 5px;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+}
+
+.ch-info p a {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding-top: 4px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+ 
+.ch-info p a:hover {
+    color: rgba(255,242,34, 0.8);
+}
+
+.ch-item:hover .ch-info-front {
+    transform: translate3d(0,280px,0) rotate3d(1,0,0,-90deg);
+    opacity: 0;
+}
+
+.ch-item:hover .ch-info-back {
+    transform: rotate3d(1,0,0,0deg);
+    opacity: 1;
 }
