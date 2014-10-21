@@ -27,11 +27,14 @@ h3 {
 }
 
 div {
-	margin: 10px 0px 10px 0px;
-	padding: 10px;
+	background: rgba(22,18,26,0.33);
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	margin: 10px;
+	padding: 5px;
 }
 
-.map, .details{
+.map, .details, .footer, .nav {
 	float: none;
 	padding: 20px;
 	vertical-align: top;
@@ -65,24 +68,17 @@ div {
 	margin: 0;
 }
 
+/*FOOTER STYLING*/
+
 .nav {
-	background-color: #1B0040;
-	margin: 0;
-	padding: 10px;
+	margin: auto;
+	font-size: 2em;
+	width: 860px;
+	text-align: left;
 }
 
-.nav button {
-	
+.footer {
+	margin: auto;
+	font-size: 0.75em;
+	width: 860px;
 }
-
-/*.column-left{
-	float: left; 
-	width: 45%;
-	display: inline;
-}
-
-.column-right{
-	float: right;
-	width: 45%;
-	display: inline
-}*/

@@ -9,7 +9,7 @@ body {
 }
 
 .main{
-background: rgba(22,18,26,0.33);
+    background: rgba(22,18,26,0.33);
 	-webkit-border-radius: 30px;
 	border-radius: 30px;
 	margin: 10px 10px 10px 10px;
@@ -198,4 +198,3 @@ input[type=text]{
 	margin-top: 30px;
 	font-size: 0.75em;
 }
-
