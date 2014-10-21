@@ -1,77 +1,88 @@
 body {
- 	margin: 0;
- 	padding: 0;
- 	background-image: url("http://i61.tinypic.com/k3noyu.jpg");
+	background-image: url("http://i61.tinypic.com/k3noyu.jpg");
 	background-attachment: fixed;
-	color: #1B0040;
-	font-family: 'Titillium Web', sans-serif;
-	font-weight: 300;
+	color: black;
+	margin: 0;
+	padding: 0;
+	font-family: "Titillium Web", sans-serif;
+	text-align: center;
 }
 
-div {
+h1, h2, h3 {
 	margin: 0;
 	padding: 0;
 }
 
-.nav {
-}
-
-.main {
-	background-color: black;
-	width: 100%;
-	-webkit-border-radius: 0px;
-	border-radius: 0px;
-}
-
-.container {
-	width: 30%;
-	height: 50%;
-	display: block;
-}
-
-.map {
-	width: 50%;
-}
-
-.map iframe {
-	max-width: 50%;
-	max-height: 50%;
-	margin: auto;
-	display: block;
-}
-
 h1 {
- 	font-size: 5.5em;
- 	padding: none;
- 	margin: 0;
+	font-size: 5.5em;
+	font-weight: 200;
 }
- 
+
+h2 {
+	font-size: 3em;
+}
+
 h3 {
- 	font-size: 3em;
- 	padding: none;
- 	margin: 0 0 40px 0;
+	font-size: 2em;
 }
 
 div {
-	text-align: left;
-	margin: 10px;
+	margin: 10px 0px 10px 0px;
 	padding: 10px;
-	background: rgba(255,255,255,0.75);
-	-webkit-border-radius: 30px;
-	border-radius: 30px;
+}
+
+.map, .details{
+	float: none;
+	padding: 20px;
+	vertical-align: top;
+	background-color: rgba(255,255,255, 0.5);
+}
+
+.map{
+	width: 50%;
+	display: table-cell;
+	text-align: center;
+}
+
+.details{
+	width:50%;
+	display: table-cell;
+}
+
+
+.container {
+	margin: auto;
+	background: none;
+	color: #20031E;
+	display: table;
+	width: 900px;
 }
 
 .header {
+	background-image: url("http://i61.tinypic.com/k3noyu.jpg");
+	background-attachment: fixed;
 	color: white;
-	text-align: left;
-	background: none;
+	margin: 0;
 }
 
-.container {
+.nav {
+	background-color: #1B0040;
+	margin: 0;
+	padding: 10px;
+}
+
+.nav button {
+	
+}
+
+/*.column-left{
+	float: left; 
+	width: 45%;
+	display: inline;
+}
+
+.column-right{
 	float: right;
-	width: 60%;
-}
-
-.footer {
-	clear: both;
-}
+	width: 45%;
+	display: inline
+}*/

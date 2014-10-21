@@ -1,69 +1,64 @@
 body {
-	background-image: url("http://i61.tinypic.com/k3noyu.jpg");
-	background-attachment: fixed;
-	color: #1B0040;
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-	text-align: justify;
+    background-image: url("http://i61.tinypic.com/k3noyu.jpg");
+    background-attachment: fixed;
+    color: #1B0040;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    text-align: center;
 }
 
 div{
-	margin: 10px 150px 10px 150px;
-	padding: 10px;
+    
+    margin: 10px 100px 10px 100px;
+    padding: 10px;
 }
 
-.creators {
-	margin: 0;
-	padding: 0;
-}
 
-.description, .header{
-	background: none;
+.description, .creators {
+    background: rgba(255,255,255,0.75);
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
 }
 
 .description {
-	background: rgba(255,255,255,0.50);
-	-webkit-border-radius: 30px;
-	border-radius: 30px;
+    margin-top: 300px;
 }
+
 
 .header{
-	color: white;
+    color: white;
+    background: none;
 }
 
-.container{
-	background: none;
-	/*margin-left: 50px;
-	margin-right: 50px;*/
+.photos {
+    position: relative;
+    left: -240px;
 }
 
-h1, h2, h3, h4 {
-	text-align: center;
-}
 
 h1 {
-	font-size: 3em;
+    font-size: 3em;
 }
 
 h2 {
-	font-size: 2.5em;
+    font-size: 2.5em;
 }
 
 h3 {
-	font-size: 2em;
+    font-size: 2em;
 }
 
 h4{
-	font-size: 1.25em;
+    font-size: 1.25em;
 }
 
 ul {
-	padding: 0px;
-	margin: 0px;
-	display: inline;
+    padding: 0px;
+    margin: 0px;
+    display: inline;
 }
 
 li {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 /*CREATOR STYLE*/
@@ -106,13 +101,25 @@ li {
     opacity: 0;
 }
 
+.ch-img-1 { 
+    background-image: url(kwon.jpg);
+}
+
+.ch-img-2{ 
+    background-image: url(sortman.jpg);
+}
+
+.ch-img-3 { 
+    background-image: url(walker.jpg);
+}
+
 .ch-info h3 {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 24px;
     margin: 0 15px;
-    padding: 10px 0 0 0;
+    padding: 60px 0 0 0;
     height: 110px;
     font-family: 'Open Sans', Arial, sans-serif;
     text-shadow: 
@@ -122,7 +129,7 @@ li {
  
 .ch-info p {
     color: #fff;
-    padding: 0px 5px;
+    padding: 10px 5px;
     font-style: italic;
     margin: 0 30px;
     font-size: 12px;
@@ -153,18 +160,4 @@ li {
 .ch-item:hover .ch-info-back {
     transform: rotate3d(1,0,0,0deg);
     opacity: 1;
-}
-
-
-/*Group member images*/
-.ch-img-1 { 
-    background-image: url(kwon.jpg);
-}
-
-.ch-img-2{ 
-    background-image: url(sortman.jpg);
-}
-
-.ch-img-3 { 
-    background-image: url(walker.jpg);
 }

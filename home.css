@@ -1,11 +1,28 @@
 /*BODY STYLING*/
 
 body {
-	background-image: url("http://i61.tinypic.com/k3noyu.jpg");
+	background-image: url(darkneb.jpg);
 	background-size: cover;
 	color: white;
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	text-align: center;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.main{
+background: rgba(22,18,26,0.33);
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	margin: 10px 10px 10px 10px;
+	padding-top: 0px;
+	padding-right:10px;
+	padding-left: 10px;
+	padding-bottom: 30px;
+	width: 800px;
+	margin: auto;
+}
+
+.main p{
+	font-size: 1.25em;
 }
 
 /*BUTTON STYLING*/
@@ -18,7 +35,167 @@ body {
 
 }
 
+/*HEADER STYLING*/
+h1{
+	font-weight: 200;
+	font-style: italic;
+	font-size: 4em;
+	margin-bottom: 0px;
+}
+
 /*SEARCH BAR STYLING*/
+form{
+	width:800px;
+	margin: 0 auto;
+}
+.search { 
+	padding:6px 15px 6px 15px;
+	margin:3px;
+}
 
+.rounded { 
+	border-radius:15px; 
+	-moz-border-radius:15px; 
+	-webkit-border-radius:15px; 
+}
 
+input[type=text]{
+	color:#bcbcbc;
+	font-size: 3em;
+	 font-family: 'Titillium Web', sans-serif;
+}
+
+.dark input[type=text]{
+	border:1px solid #2a2e31;
+	background-color:#2d3035;
+	color:#505358;
+	width: 500px;
+	height: 80px;
+
+}
+
+/*BUTTON SYTYLING*/
+.ch-grid {
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+ 
+.ch-grid:after,
+.ch-item:before {
+    content: '';
+    display: table;
+}
+ 
+.ch-grid:after {
+    clear: both;
+}
+ 
+.ch-grid li {
+    width: 220px;
+    height: 220px;
+    display: inline-block;
+    margin: 20px;
+}
+
+.ch-item {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+    box-shadow: 
+        inset 0 0 0 16px rgba(255,255,255,0.6),
+        0 1px 2px rgba(0,0,0,0.1);
+    transition: all 0.4s ease-in-out;
+}
+
+.ch-img-1 { 
+    background-image: url(binary.jpg);
+}
+ 
+.ch-img-2 { 
+    background-image: url(pencil.jpg);
+}
+ 
+.ch-img-3 { 
+    background-image: url(vinyl.jpg);
+}
+
+.ch-img-4 {
+	background-image: url(water.jpg);
+}
+
+.ch-img-5 {
+	background-image: url(group.jpg);
+}
+
+.ch-img-6 {
+	background-image: url(tools.jpg);
+}
+
+.ch-info {
+    position: absolute;
+    background: rgba(63,147,147, 0.8);
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    transform: scale(0);
+}
+
+.ch-info h3 {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1em;
+    margin: 0 10px;
+    padding: 45px 0 0 0;
+    height: 20px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-shadow: 
+        0 0 1px #fff, 
+        0 1px 2px rgba(0,0,0,0.3);
+}
+
+.ch-info p {
+    color: #fff;
+    padding: 10px 5px;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    opacity: 0;
+    transition: all 1s ease-in-out 0.4s;
+}
+ 
+
+.ch-item:hover {
+    box-shadow: 
+        inset 0 0 0 1px rgba(255,255,255,0.1),
+        0 1px 2px rgba(0,0,0,0.1);
+}
+
+.ch-item:hover .ch-info {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.ch-item:hover .ch-info p {
+    opacity: 1;
+}
+
+/*FOOTER STYLING*/
+
+.footer{
+
+	margin-top: 30px;
+	font-size: 0.75em;
+}
 
