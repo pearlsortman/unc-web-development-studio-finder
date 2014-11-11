@@ -1,9 +1,14 @@
 body {
-    background-image: url("http://i61.tinypic.com/k3noyu.jpg");
-    background-attachment: fixed;
+    background-image: url(images/darkneb.jpg);
+    background-size: cover;
+    background-repeat: none;
     color: #1B0040;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     text-align: center;
+}
+
+#creators {
+    position:;
 }
 
 div{
@@ -107,15 +112,15 @@ li {
 }
 
 .ch-img-1 { 
-    background-image: url(kwon.jpg);
+    background-image: url(images/kwon.jpg);
 }
 
 .ch-img-2{ 
-    background-image: url(sortman.jpg);
+    background-image: url(images/sortman.jpg);
 }
 
 .ch-img-3 { 
-    background-image: url(walker.jpg);
+    background-image: url(images/walker.jpg);
 }
 
 .ch-info h3 {
