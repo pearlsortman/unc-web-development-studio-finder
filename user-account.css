@@ -1,0 +1,37 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background-image: url(http://www.transparenttextures.com/patterns/stardust.png);
+	color: #5D4D5C;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+#navbar {
+	color: white;
+}
+
+#navbar .span {
+	padding: 50px;
+}
+
+#navbar, .container {
+	width: 900px;
+	margin: auto;
+	background-color: gray;
+}
+
+.container {
+	
+}
+
+span {
+
+}
