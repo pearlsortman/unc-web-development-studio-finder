@@ -1,17 +1,43 @@
 html, body {
 	margin: 0;
 	padding: 0;
+	font-family: "Titillium Web", sans-serif;	background-color: #170016;
 	background-image: url(http://www.transparenttextures.com/patterns/stardust.png);
 	color: #5D4D5C;
+	text-align: left;
 }
 
-ul {
-	list-style-type: none;
+h1 {
+	color: white;
+	font-weight: 200;
+	font-size: 3em;
+}
+
+table {
+	padding: 20px;
+}
+
+th {
+	color: white;
 }
 
 a {
 	text-decoration: none;
 	color: white;
+}
+
+span {
+	margin-right: 50px;
+	color: white;
+}
+
+#header, #navbar, .container {
+	width: 900px;
+	margin: auto;
+}
+
+#header {
+	background-color: none;
 }
 
 #navbar {
@@ -20,18 +46,4 @@ a {
 
 #navbar .span {
 	padding: 50px;
-}
-
-#navbar, .container {
-	width: 900px;
-	margin: auto;
-	background-color: gray;
-}
-
-.container {
-	
-}
-
-span {
-
 }

@@ -5,42 +5,105 @@
     <meta charset='utf-8'>
     <link type="image/png" rel="icon" href="nebfavi.ico">
     <link type="text/css" rel="stylesheet" href="user-account.css">
-	
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Nebula | Account Details</title>
 </head>
 
 <body>
-    <h1 href="search-results.html">Nebula | My Account</h1>
-    <div class='navbar' id='navbar'>
-            <span><a href="#">My Information</a></span>
-            <span><a href="#myspaces">My Spaces</a></span>
-            <span><a href="#myreviews">My Reviews</a></span>
-        </ul>
+
+    <div id='header'>
+        <a href='index.html'>
+            <h1>Nebula | My Account</h1>
+        </a>
+    </div>
+
+    <div id='navbar'>
+        <span class='navItem' divID='myinfo'>My Information</span>
+        <span class='navItem' divID='myspaces'>My Spaces</span>
+        <span class='navItem' divID='myreviews'>My Reviews</span>
     </div>
 
     <div class='container' id="myinfo">
-    	<table id="contact">
-    		<tr><td>Full Name:</td><td>Pearl Sortman</td></tr>
-    		<tr><td>User Name:</td><td>psortman</td></tr>
-    		<tr><td>Email Address:</td><td>user@gmail.com</td></tr>
-    		<tr><td>Mobile Number:</td><td>(999) 999-9999</td></tr>
-    		<tr><td>Location:</td><td>Chapel Hill, NC</td></tr>
-    	</table>
-    	<ul id="billing">
-    		<li>
-    	</ul>
+        <table id="contact">
+            <th>Personal Information</th>
+            <tr>
+                <td>Full Name:</td>
+                <td>Pearl Sortman</td>
+            </tr>
+            <tr>
+                <td>User Name:</td>
+                <td>psortman</td>
+            </tr>
+            <tr>
+                <td>Email Address:</td>
+                <td>user@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Mobile Number:</td>
+                <td>(999) 999-9999</td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td>Chapel Hill, NC</td>
+            </tr>
+        </table>
+
+        <table id="billing">
+            <th>Billing Information</th>
+            <tr>
+                <td>Billing Address:</td>
+                <td>999 Franklin St. Chapel Hill, NC</td>
+            </tr>
+            <tr>
+                <td>Saved Card:</td>
+                <td>My card</td>
+                <td>VISA Ending in 0000</td>
+                <td>Exp. Date: 12/16</td>
+            </tr>
+            <tr>
+                <td>Saved Card:</td>
+                <td>another card</td>
+                <td>DISCOVER Ending in 9999</td>
+                <td>Exp. Date: 03/17</td>
+            </tr>
+        </table>
     </div>
 
     <div class='container' id="myspaces">
-
+        <table id='favorites'>
+            <th>My Favorite Spaces</th>
+            <tr>
+                <td>Favorite 1:</td>
+                <td><a href='space-profile.html'>Perch Studios</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Favorite 2:</td>
+                <td><a href='space-profile.html'>Studio2</a>
+                </td>
+            </tr>
+        </table>
+        <table id='reservations'>
+            <th>Reservation History</th>
+            <tr>
+                <td>Date</td>
+                <td><a href='space-profile.html'>Space Name</a></td>
+            </tr>
+        </table>
     </div>
 
     <div class='container' id="myreviews">
-
+        <table id='reviews'>
+            <th>Posted Reviews</th>
+        </table>
+        <table id='drafts'>
+            <th>Saved Draft Reviews</th>
+        </table>
     </div>
 
 </body>
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="user-account.js"></script>
 
 <html>
