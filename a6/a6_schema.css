@@ -1,0 +1,47 @@
+body {
+    background-image: url(darkneb.jpg);
+    background-attachment: fixed;
+    background-repeat: none;
+    color: black;
+    font-family: 'Titillium Web', sans-serif;
+}
+p.p1 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    font: 12.0px;
+}
+p.p2 {
+    margin: 0.0px 0.0px 0.0px 0.0px;
+    font: 12.0px;
+    min-height: 14.0px
+}
+h1, h2 {
+    text-align: center;
+    color: white;
+}
+#header {
+    width: 850px;
+    margin: auto;
+}
+#schema, #diagram {
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
+}
+#diagram {
+    width: 750px;
+    padding: 50px;
+}
+#schema {
+    width: 700px;
+    padding: 10px 75px 75px 75px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    background-color: rgba(224, 224, 224, 0.7);
+}
+#schema h2 {
+    text-align: center;
+    color: black;
+}
+img {
+    max-width: 750px;
+}

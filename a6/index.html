@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>A6: Nebula Schema</title>
+    <meta name="Generator" content="Cocoa HTML Writer">
+    <meta name="CocoaVersion" content="1343.16">
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,200italic,300,400' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="a6_schema.css">
+</head>
+
+<body>
+    <div id='header'>
+        <h1>A6: Final Project Database Design</h1>
+        <h2>David Kwon | Pearl Sortman | Faith Walker</h2>
+    </div>
+    <div id='diagram'>
+        <img src='a6_schema.png'>
+    </div>
+    <div id='schema'>
+    <h2>Schema</h2>
+        <p class="p1">CREATE TABLE a6_hours (</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>spaceID int NOT NULL REFERENCES a6_spaces(spaceID),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>day int NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>open time NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>close time NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>PRIMARY KEY (spaceID),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>UNIQUE (day, open, close)</p>
+        <p class="p1">);</p>
+        <p class="p2">
+            <br>
+        </p>
+        <p class="p1">CREATE TABLE a6_locations (</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>addressID int NOT NULL AUTO_INCREMENT,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>street varchar(100) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>city char(100) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>state char(2) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>country char(50) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>PRIMARY KEY (addressID)</p>
+        <p class="p1">);</p>
+        <p class="p2">
+            <br>
+        </p>
+        <p class="p1">CREATE TABLE a6_reservations (</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>spaceID int NOT NULL REFERENCES a6_spaces(spaceID),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>date date NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>time time NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>userID varchar(20) NOT NULL REFERENCES a6_users(userID),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>paid bool NOT NULL DEFAULT 0,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>PRIMARY KEY (spaceID, date, time, userID)</p>
+        <p class="p1">);</p>
+        <p class="p2">
+            <br>
+        </p>
+        <p class="p1">CREATE TABLE a6_spaces (</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>spaceID int NOT NULL AUTO_INCREMENT,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>defaultImage blob NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>mapLink blob NOT NULL,</p>
+        <p class="p2">
+            <br>
+        </p>
+        <p class="p1"><span class="Apple-converted-space">    </span>name varchar(255),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>addressID int NOT NULL REFERENCES a6_locations(addressID),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>type char(20),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>description varchar(1000) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>website varchar(200) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>numberSeats int,</p>
+        <p class="p2">
+            <br>
+        </p>
+        <p class="p1"><span class="Apple-converted-space">    </span>wifi bool NOT NULL DEFAULT 1,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>parking bool NOT NULL DEFAULT 0,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>personalDesk bool NOT NULL DEFAULT 0,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>breakroom bool NOT NULL DEFAULT 0,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>printing bool NOT NULL DEFAULT 0,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>storage bool NOT NULL DEFAULT 0,</p>
+        <p class="p2">
+            <br>
+        </p>
+        <p class="p1"><span class="Apple-converted-space">    </span>PRIMARY KEY (spaceID)</p>
+        <p class="p1">);</p>
+        <p class="p2">
+            <br>
+        </p>
+        <p class="p1">CREATE TABLE a6_rates (</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>spaceID int NOT NULL REFERENCES a6_spaces(spaceID),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>priceLevel varchar(50),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>hourly decimal(4,2),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>daily decimal(4,2),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>weekly decimal(4,2),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>monthly decimal(4,2),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>yearly decimal(4,2),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>PRIMARY KEY (spaceID, priceLevel)</p>
+        <p class="p1">);</p>
+        <p class="p2">
+            <br>
+        </p>
+        <p class="p1">CREATE TABLE a6_users (</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>userID varchar(20) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>email varchar(100) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>first char(100) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>last char(100) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>password varchar(20) NOT NULL,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>addressID int NOT NULL REFERENCES a6_locations(addressID),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>owner bool NOT NULL DEFAULT 0,</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>PRIMARY KEY (userID)</p>
+        <p class="p1">);</p>
+        <p class="p2">
+            <br>
+        </p>
+        <p class="p1">CREATE TABLE a6_spacesAndOwners (</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>spaceID int NOT NULL REFERENCES a6_spaces(spaceID),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>userID varchar(20) NOT NULL REFERENCES a6_users(userID),</p>
+        <p class="p1"><span class="Apple-converted-space">    </span>PRIMARY KEY (spaceID, userID)</p>
+        <p class="p1">);</p>
+    </div>
+</body>
+
+</html>

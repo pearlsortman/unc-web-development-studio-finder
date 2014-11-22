@@ -9,7 +9,7 @@ CREATE TABLE a6_hours (
 
 CREATE TABLE a6_locations (
     addressID int NOT NULL AUTO_INCREMENT,
-    streetAddress varchar(100) NOT NULL,
+    street varchar(100) NOT NULL,
     city char(100) NOT NULL,
     state char(2) NOT NULL,
     country char(50) NOT NULL,
@@ -49,19 +49,20 @@ CREATE TABLE a6_spaces (
 
 CREATE TABLE a6_rates (
     spaceID int NOT NULL REFERENCES a6_spaces(spaceID),
+    priceLevel varchar(50),
     hourly decimal(4,2),
     daily decimal(4,2),
     weekly decimal(4,2),
     monthly decimal(4,2),
     yearly decimal(4,2),
-    PRIMARY KEY (spaceID)
+    PRIMARY KEY (spaceID, priceLevel)
 );
 
 CREATE TABLE a6_users (
     userID varchar(20) NOT NULL,
     email varchar(100) NOT NULL,
-    first varchar(100) NOT NULL,
-    last varchar(100) NOT NULL,
+    first char(100) NOT NULL,
+    last char(100) NOT NULL,
     password varchar(20) NOT NULL,
     addressID int NOT NULL REFERENCES a6_locations(addressID),
     owner bool NOT NULL DEFAULT 0,
