@@ -1,10 +1,12 @@
 <?php
 
-$Space = Trim(stripslashes($_POST['space']));
-$EmailTo = "faithcorinne@gmail.com";
+ini_set("SMTP","smtp.my.isp.net" ); 
+ini_set('sendmail_from', 'user@example.com'); 
+
+$Space = $_POST['space'];
+$EmailTo = "dskwon19@gmail.com";
 $Subject = "New Space Hub Request";
 $Name = Trim(stripslashes($_POST['Name'])); 
-$Tel = Trim(stripslashes($_POST['Tel'])); 
 $Email = Trim(stripslashes($_POST['Email'])); 
 $Descript = Trim(stripslashes($_POST['Descript'])); 
 
@@ -22,9 +24,6 @@ $Body .= $Space;
 $Body .= "Name: ";
 $Body .= $Name;
 $Body .= "\n";
-$Body .= "Tel: ";
-$Body .= $Tel;
-$Body .= "\n";
 $Body .= "Email: ";
 $Body .= $Email;
 $Body .= "\n";
@@ -33,13 +32,12 @@ $Body .= $Descript;
 $Body .= "\n";
 
 // send email 
-$success = mail($EmailTo, $Subject, $Body, "From: <$Name>");
-echo ($success);
+$header = 'From: '.$Email."\r\n";
+mail($EmailTo, $Subject, $Body, $header);
+
 // redirect to success page 
-/*if ($success){
-  print "<meta http-equiv=\"refresh\" content=\"0;URL=contact-thanks.php\">";
-}
-else{
+/*  print "<meta http-equiv=\"refresh\" content=\"0;URL=contact-thanks.php\">";*/
+/*else{
   print "<meta http-equiv=\"refresh\" content=\"0;URL=error.html\">";
 }*/
 ?>
