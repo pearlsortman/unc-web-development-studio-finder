@@ -1,7 +1,7 @@
 /*BODY STYLING*/
 
 body {
-	background-image: url(images/darkneb.jpg);
+	background-image: url(../images/darkneb.jpg);
 	background-size: cover;
     background-repeat: none;
 	color: white;
@@ -116,27 +116,27 @@ input[type=text]{
 }
 
 .ch-img-1 { 
-    background-image: url(images/binary.jpg);
+    background-image: url(../images/binary.jpg);
 }
  
 .ch-img-2 { 
-    background-image: url(images/pencil.jpg);
+    background-image: url(../images/pencil.jpg);
 }
  
 .ch-img-3 { 
-    background-image: url(images/vinyl.jpg);
+    background-image: url(../images/vinyl.jpg);
 }
 
 .ch-img-4 {
-	background-image: url(images/water.jpg);
+	background-image: url(../images/water.jpg);
 }
 
 .ch-img-5 {
-	background-image: url(images/group.jpg);
+	background-image: url(../images/group.jpg);
 }
 
 .ch-img-6 {
-	background-image: url(images/tools.jpg);
+	background-image: url(../images/tools.jpg);
 }
 
 .ch-info {
