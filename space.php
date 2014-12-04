@@ -259,7 +259,8 @@ class Space {
 
 
     echo "UPDATING";
-    echo "SQL " . $mysqli;
+    echo "SQL";
+    echo $mysqli;
     echo $this->hasParking;
     echo $this->hasWifi;
 		$result = $mysqli->query("update a6_spaces set " .
