@@ -27,7 +27,7 @@ class Space {
 
 		$result = $con->query("insert into a6_spaces values (0, " . 
 			                     ", " .  $name . ", " . $type . ", " . $street . ", " . $city . ", " . $state . ", " . $zip . ", " . $logo . 
-			                     ", " . $logo . ", " . $description . ", " . $website . ", " . $numberofSeats . ", " . $hasWifi . ", " $hasParking . 
+			                     ", " . $logo . ", " . $description . ", " . $website . ", " . $numberofSeats . ", " . $hasWifi . ", " . $hasParking . 
 			                     ", " . $hasDesk . ", " . $hasBreakroom . ", " . $hasPrinting . ", " . $hasStorage")");
 
 		 if ($result) {
