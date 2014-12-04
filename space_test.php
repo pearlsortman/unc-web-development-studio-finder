@@ -55,7 +55,7 @@ $s = Space::findByID(1);<br>
 
 <?php
 $s = Space::findByID(1);
-$s->setWifi(0);
+$s->setHasWifi(0);
 echo "WIFI SET TO 0";
 ?>
 <p>
