@@ -224,6 +224,7 @@ class Space {
 
   	public function setHasWifi($hasWifi) {
     	$this->hasWifi = $hasWifi;
+      echo $hasWifi;
     	return $this->update();
   	}
 
