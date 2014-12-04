@@ -16,7 +16,7 @@ function renderSpace($t) {
     <li>zip = <?php print($t->getZip())?></li>
     <li>description = <?php print($t->getDescription())?></li>
     <li>website = <?php print($t->getWebsite())?></li>
-    <li>numberOfSeats = <?php print($t->getNumberOfSeats())?></li>
+    <li>numberSeats = <?php print($t->getNumberSeats())?></li>
     <li>hasWifi = <?php print($t->getHasWifi())?></li>
     <li>hasParking = <?php print($t->getHasParking())?></li>
     <li>hasDesk = <?php print($t->getHasDesk())?></li>
