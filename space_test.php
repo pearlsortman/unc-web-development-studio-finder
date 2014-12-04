@@ -44,9 +44,8 @@ $t = Space::findByID(1);
 
 <?php
 $s = Space::findByID(1);
-$s->hasParking = 1;
-$s->save();
-echo "PARKING SAVED";
+$s->setHasParking(1);
+echo "PARKING SET TO 1";
 ?>
 <p>
 $s = Space::findByID(1);<br>
