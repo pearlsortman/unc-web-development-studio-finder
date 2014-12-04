@@ -33,11 +33,9 @@ $Body .= "\n";
 
 // send email 
 $header = 'From: '.$Email."\r\n";
-mail($EmailTo, $Subject, $Body, $header);
+@mail($EmailTo, $Subject, $Body, $header);
 
 // redirect to success page 
-/*  print "<meta http-equiv=\"refresh\" content=\"0;URL=contact-thanks.php\">";*/
-/*else{
-  print "<meta http-equiv=\"refresh\" content=\"0;URL=error.html\">";
-}*/
+print "<meta http-equiv=\"refresh\" content=\"0;URL=contact-thanks.php\">";
+
 ?>
