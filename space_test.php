@@ -44,30 +44,33 @@ $t = Space::findByID(1);
 
 <?php
 $t->setHasParking(1);
-$t = Space::findByID(1);
+$s = Space::findByID(1);
 ?>
 <p>
-$t = Space::findByID(1);<br>
+$t->setHasParking(1);<br>
+$s = Space::findByID(1);<br>
 <blockquote>
-	<?php renderSpace($t); ?>
+	<?php renderSpace($s); ?>
 </blockquote>
 
 <?php
 $t->setHasWifi(0);
-$t = Space::findByID(1);
+$s = Space::findByID(1);
 ?>
 <p>
-$t = Space::findByID(1);<br>
+$t->setHasWifi(0);<br>
+$s = Space::findByID(1);<br>
 <blockquote>
-	<?php renderSpace($t); ?>
+	<?php renderSpace($s); ?>
 </blockquote>
 
 <?php
-$t->setDescription("David is the best ever.");
-$t = Space::findByID(1);
+$t->setDescription("David is the best evarrr!");
+$s = Space::findByID(1);
 ?>
 <p>
-$t = Space::findByID(1);<br>
+$t->setDescription("David is the best evarrr!");<br>
+$s = Space::findByID(1);<br>
 <blockquote>
-	<?php renderSpace($t); ?>
+	<?php renderSpace($s); ?>
 </blockquote>
