@@ -44,20 +44,20 @@ $t = Space::findByID(1);
 
 <?php
 $t->setHasParking(1);
-$t = Transaction::findByID(1);
+$t = Space::findByID(1);
 ?>
 <p>
-$t = Transaction::findByID(1);<br>
+$t = Space::findByID(1);<br>
 <blockquote>
 	<?php renderSpace($t); ?>
 </blockquote>
 
 <?php
 $t->setDescription("David is the best ever.");
-$t = Transaction::findByID(1);
+$t = Space::findByID(1);
 ?>
 <p>
-$t = Transaction::findByID(1);<br>
+$t = Space::findByID(1);<br>
 <blockquote>
 	<?php renderSpace($t); ?>
 </blockquote>
