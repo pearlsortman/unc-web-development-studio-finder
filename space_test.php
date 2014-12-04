@@ -43,34 +43,35 @@ $t = Space::findByID(1);
 </blockquote>
 
 <?php
-$t->setHasParking(1);
 $s = Space::findByID(1);
+$s->hasParking = 1;
+$s->save();
+echo "PARKING SAVED";
 ?>
 <p>
-$t->setHasParking(1);<br>
 $s = Space::findByID(1);<br>
 <blockquote>
 	<?php renderSpace($s); ?>
 </blockquote>
 
-<?php
-$t->setHasWifi(0);
-$s = Space::findByID(1);
-?>
-<p>
-$t->setHasWifi(0);<br>
-$s = Space::findByID(1);<br>
-<blockquote>
-	<?php renderSpace($s); ?>
-</blockquote>
+// <?php
+// $t->setHasWifi(0);
+// $s = Space::findByID(1);
+// ?>
+// <p>
+// $t->setHasWifi(0);<br>
+// $s = Space::findByID(1);<br>
+// <blockquote>
+// 	<?php renderSpace($s); ?>
+// </blockquote>
 
-<?php
-$t->setDescription("David is the best evarrr!");
-$s = Space::findByID(1);
-?>
-<p>
-$t->setDescription("David is the best evarrr!");<br>
-$s = Space::findByID(1);<br>
-<blockquote>
-	<?php renderSpace($s); ?>
-</blockquote>
+// <?php
+// $t->setDescription("David is the best evarrr!");
+// $s = Space::findByID(1);
+// ?>
+// <p>
+// $t->setDescription("David is the best evarrr!");<br>
+// $s = Space::findByID(1);<br>
+// <blockquote>
+// 	<?php renderSpace($s); ?>
+// </blockquote>
