@@ -255,7 +255,7 @@ class Space {
   	}
 
   	private function update() {
-		$mysqli = mysqli('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
+		$mysqli = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
 
     if(!$mysqli) {
       echo "NOT CONNECTED";
