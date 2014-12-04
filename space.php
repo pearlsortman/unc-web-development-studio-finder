@@ -229,6 +229,7 @@ class Space {
 
   	public function setHasParking($hasParking) {
     	$this->hasParking = $hasParking;
+      echo $hasParking;
     	return $this->update();
   	}
 
