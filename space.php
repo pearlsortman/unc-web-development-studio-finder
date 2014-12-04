@@ -257,7 +257,9 @@ class Space {
   	private function update() {
 		$mysqli = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
 
+
     echo "UPDATING";
+    echo "SQL " . $mysqli;
     echo $this->hasParking;
     echo $this->hasWifi;
 		$result = $mysqli->query("update a6_spaces set " .
