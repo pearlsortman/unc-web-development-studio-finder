@@ -264,34 +264,10 @@ class Space {
     echo "UPDATING";
     echo $this->hasParking;
     echo $this->hasWifi;
-		$result = $mysqli->query("update a6_spaces set " .
-			     "name=" .
-			     "'" . $mysqli->real_escape_string($this->name) . "', " .
-			     "type=" .
-			     "'" . $mysqli->real_escape_string($this->type) . "', " .
-			     "street=" .
-			     "'" . $mysqli->real_escape_string($this->street) . "', " .
-			     "city=" .
-			     "'" . $mysqli->real_escape_string($this->city) . "', " .
-			     "state=" .
-			     "'" . $mysqli->real_escape_string($this->state) . "', " .
-			     "zip=" . $this->zip . ", " .
-			     "logo=" .$this->logo . ", " .
-			     "description=" .
-			     "'" . $mysqli->real_escape_string($this->description) . "', " .
-			     "website=" .
-			     "'" . $mysqli->real_escape_string($this->website) . "', " . 
-			     "numberSeats=" . $this->numberSeats . ", " .
-			     "hasWifi=" . $this->hasWifi . ", " .
-			     "hasParking=" . $this->hasParking . ", " .
-			     "hasDesk=" . $this->hasDesk . ", " .
-			     "hasBreakroom=" . $this->hasBreakroom . ", " .
-			     "hasPrinting=" . $this->hasPrinting . ", " .
-			     "hasStorage=" . $this->hasStorage . 
-			     " where spaceID=" . $this->spaceID);
+		$result = $mysqli->query("update a6_spaces set name = 'blah' where spaceID=1);
 
       if ($result) {
-        echo "SUCESS";
+        echo "SUCCESS";
     }
 		return $result;
 	}
