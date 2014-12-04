@@ -44,8 +44,8 @@ $t = Space::findByID(1);
 
 <?php
 $s = Space::findByID(1);
-$s->setHasParking(1);
-echo "PARKING SET TO 1";
+$s->setHasParking(0);
+echo "PARKING SET TO 0";
 ?>
 <p>
 $s = Space::findByID(1);<br>
@@ -53,24 +53,24 @@ $s = Space::findByID(1);<br>
 	<?php renderSpace($s); ?>
 </blockquote>
 
-// <?php
-// $t->setHasWifi(0);
-// $s = Space::findByID(1);
-// ?>
-// <p>
-// $t->setHasWifi(0);<br>
-// $s = Space::findByID(1);<br>
-// <blockquote>
-// 	<?php renderSpace($s); ?>
-// </blockquote>
+<?php
+$s = Space::findByID(1);
+$s->setWifi(0);
+echo "WIFI SET TO 0";
+?>
+<p>
+$s = Space::findByID(1);<br>
+<blockquote>
+	<?php renderSpace($s); ?>
+</blockquote>
 
-// <?php
-// $t->setDescription("David is the best evarrr!");
-// $s = Space::findByID(1);
-// ?>
-// <p>
-// $t->setDescription("David is the best evarrr!");<br>
-// $s = Space::findByID(1);<br>
-// <blockquote>
-// 	<?php renderSpace($s); ?>
-// </blockquote>
+<?php
+$s = Space::findByID(1);
+$s->setDescription("David's a genious!!!");
+echo "DESCRIPTION UPDATED";
+?>
+<p>
+$s = Space::findByID(1);<br>
+<blockquote>
+	<?php renderSpace($s); ?>
+</blockquote>
