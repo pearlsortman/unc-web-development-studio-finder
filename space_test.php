@@ -53,6 +53,16 @@ $t = Space::findByID(1);<br>
 </blockquote>
 
 <?php
+$t->setHasWifi(0);
+$t = Space::findByID(1);
+?>
+<p>
+$t = Space::findByID(1);<br>
+<blockquote>
+	<?php renderSpace($t); ?>
+</blockquote>
+
+<?php
 $t->setDescription("David is the best ever.");
 $t = Space::findByID(1);
 ?>
