@@ -11,7 +11,7 @@ class Space {
 	private $logo;
 	private $description;
 	private $website;
-	private $numberofSeats;
+	private $numberSeats;
 	private $hasWifi;
 	private $hasParking;
 	private $hasDesk;
@@ -27,12 +27,12 @@ class Space {
 
 		$result = $con->query("insert into a6_spaces values (0, " . 
 			                     ", " .  $name . ", " . $type . ", " . $street . ", " . $city . ", " . $state . ", " . $zip . ", " . $logo . 
-			                     ", " . $logo . ", " . $description . ", " . $website . ", " . $numberofSeats . ", " . $hasWifi . ", " . $hasParking . 
+			                     ", " . $logo . ", " . $description . ", " . $website . ", " . $numberSeats . ", " . $hasWifi . ", " . $hasParking . 
 			                     ", " . $hasDesk . ", " . $hasBreakroom . ", " . $hasPrinting . ", " . $hasStorage . ")");
 
 		 if ($result) {
 			$new_id = $mysqli->insert_id;
-			return new Space($new_id, $name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberofSeats, $hasWifi, $hasParking,
+			return new Space($new_id, $name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberSeats, $hasWifi, $hasParking,
 				$hasDesk, $hasBreakroom, $hasPrinting, $hasStorage);
 		}
 		
@@ -57,7 +57,7 @@ class Space {
 					       $spaces_info['logo'],
 					       $spaces_info['description'],
 					       $spaces_info['website'],
-					       $spaces_info['numberofSeats'],
+					       $spaces_info['numberSeats'],
 					       $spaces_info['hasWifi'],
 					       $spaces_info['hasParking'],
 					       $spaces_info['hasDesk'],
@@ -128,8 +128,8 @@ class Space {
     	return $this->website;
   	}
 
-  	public function getNumberOfSeats() {
-   		return $this->numberofSeats;
+  	public function getNumberSeats() {
+   		return $this->numberSeats;
   	}
 
   	public function getHasWifi() {
@@ -201,8 +201,8 @@ class Space {
     	return $this->update();
   	}
 
-  	public function setNumberOfSeats($numberofSeats) {
-   		$this->numberofSeats = $numberofSeats;
+  	public function setNumberSeats($numberSeats) {
+   		$this->numberSeats = $numberSeats;
     	return $this->update();
   	}
 
@@ -237,10 +237,10 @@ class Space {
   	}
 
   	private function update() {
-		$con = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
-		$result = $con->query("update a6_spaces set " .
+		$mysqli = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
+		$result = $mysqli->query("update a6_spaces set " .
 			     "name=" .
-			     "'" . $mysqli->real_escape_string($this->name) . "', " .
+			     "'" . $mysqli->$this->name . "', " .
 			     "type=" .
 			     "'" . $mysqli->real_escape_string($this->type) . "', " .
 			     "street=" .
@@ -255,7 +255,7 @@ class Space {
 			     "'" . $mysqli->real_escape_string($this->description) . "', " .
 			     "website=" .
 			     "'" . $mysqli->real_escape_string($this->website) . "', " . 
-			     "numberofSeats=" . $this->numberofSeats . ", " .
+			     "numberSeats=" . $this->numberSeats . ", " .
 			     "hasWifi=" . $this->hasWifi . ", " .
 			     "hasParking=" . $this->hasParking . ", " .
 			     "hasDesk=" . $this->hasDesk . ", " .
