@@ -264,12 +264,15 @@ class Space {
     echo "UPDATING";
     echo $this->hasParking;
     echo $this->hasWifi;
-		$result = $mysqli->query("update a6_spaces set name = 'blah' where spaceID=1);
-
-      if ($result) {
-        echo "SUCCESS";
+    $sql="UPDATE a6_spaces SET name='newwwwwww' WHERE spaceID='1'";
+    if (mysqli_query($mysqli, $sql)) {
+      echo "New way of doing things has worked.";
+    } else {
+      echo "Still having errors.";
     }
-		return $result;
+
+    mysqli_close($mysqli);
+    
 	}
 
 	public function delete() {
