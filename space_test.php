@@ -24,23 +24,23 @@ function renderSpace($t) {
     <li>hasPrinting = <?php print($t->getHasPrinting())?></li>
     <li>hasStorage = <?php print($t->getHasStorage())?></li>
 </ul>
-// <?php
-//       }
-// }
+<?php
+      }
+}
 
-// ?>
-// <h1>Space Test</h1>
+?>
+<h1>Space Test</h1>
 
-// <h2>Retrieving by ID</h2>
-// <?php
+<h2>Retrieving by ID</h2>
+<?php
 
-// $t = Space::findByID(1);
-// ?>
-// <p>
-// $t = Space::findByID(1);
-// <blockquote>
-// 	<?php renderSpace($t); ?>
-// </blockquote>
+$t = Space::findByID(1);
+?>
+<p>
+$t = Space::findByID(1);
+<blockquote>
+	<?php renderSpace($t); ?>
+</blockquote>
 
 // <?php
 // $s = Space::findByID(1);
