@@ -289,6 +289,10 @@ class Space {
 			     "hasPrinting=" . $this->hasPrinting . ", " .
 			     "hasStorage=" . $this->hasStorage . 
 			     " where spaceID=" . $this->spaceID);
+
+      if ($result) {
+        echo "SUCESS";
+    }
 		return $result;
 	}
 
