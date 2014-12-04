@@ -20,7 +20,7 @@ class Space {
 	private $hasStorage;
 
 
-	 public static function create($name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberofSeats, $hasWifi, $hasParking,
+	 public static function create($name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberSeats, $hasWifi, $hasParking,
 	 	$hasDesk, $hasBreakroom, $hasPrinting, $hasStorage) {
 
 		$con = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
@@ -82,10 +82,26 @@ class Space {
     return $id_array;
   	}
 
-  	private function __construct($spaceID, $name, $type) {
+  	private function __construct($spaceID, $name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberSeats, $hasWifi, $hasParking,
+	 	$hasDesk, $hasBreakroom, $hasPrinting, $hasStorage) {
     	$this->spaceID = $spaceID;
     	$this->name = $name;
     	$this->type = $type;
+    	$this->street = $street;
+    	$this->city = $city;
+    	$this->state = $state;
+    	$this->zip = $zip;
+    	$this->logo = $logo;
+    	$this->description = $description;
+    	$this->website = $website;
+    	$this->numberSeats = $numberSeats;
+    	$this->hasWifi = $hasWifi;
+    	$this->hasParking = $hasParking;
+    	$this->hasDesk = $hasDesk;
+    	$this->hasBreakroom = $hasBreakroom;
+    	$this->hasPrinting = $hasPrinting;
+    	$this->hasStorage = $hasStorage;
+
   	}
 
 	public function getSpaceID() {
@@ -240,7 +256,7 @@ class Space {
 		$mysqli = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
 		$result = $mysqli->query("update a6_spaces set " .
 			     "name=" .
-			     "'" . $mysqli->$this->name . "', " .
+			     "'" . $mysqli->real_escape_string($this->name) . "', " .
 			     "type=" .
 			     "'" . $mysqli->real_escape_string($this->type) . "', " .
 			     "street=" .

@@ -49,7 +49,7 @@ $t = Transaction::findByID(1);
 <p>
 $t = Transaction::findByID(1);<br>
 <blockquote>
-	<?php renderTransaction($t); ?>
+	<?php renderSpace($t); ?>
 </blockquote>
 
 <?php
@@ -59,5 +59,5 @@ $t = Transaction::findByID(1);
 <p>
 $t = Transaction::findByID(1);<br>
 <blockquote>
-	<?php renderTransaction($t); ?>
+	<?php renderSpace($t); ?>
 </blockquote>
