@@ -258,21 +258,40 @@ class Space {
 		$mysqli = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
 
     if(!$mysqli) {
-      echo "NOT CONNECTED";
+      echo "NOT CONNECTED \n";
     }
 
-    echo "UPDATING";
-    echo $this->hasParking;
-    echo $this->hasWifi;
-    $sql="UPDATE a6_spaces SET name='newwwwwww' WHERE spaceID='1'";
+    $sqlName =    "'" . $mysqli->real_escape_string($this->name) . "' ,";
+    $sqlType =    "'" . $mysqli->real_escape_string($this->type) . "' ,";
+    $sqlStreet =  "'" . $mysqli->real_escape_string($this->street) . "', ";
+    $sqlCity =    "'" . $mysqli->real_escape_string($this->city) . "', ";
+    $sqlState =   "'" . $mysqli->real_escape_string($this->state) . "', ";
+    $sqlZip =     "'" . $this->zip . "', ";
+    $sqlDescription = "'" . $mysqli->real_escape_string($this->description) . "', ";
+    $sqlWebsite =     "'" . $mysqli->real_escape_string($this->website) . "', ";
+    $sqlNumberSeats = "." . $this->numberSeats . "', ";
+    $sqlHasWifi =     "'" . $this->hasWifi . "', ";
+    $sqlHasParking =  "'" . $this->hasParking . "', ";
+    $sqlHasDesk =     "'" . $this->hasDesk . "', ";
+    $sqlHasBreakroom = "'" . $this->hasBreakroom . "', ";
+    $sqlHasPrinting = "'" . $this->hasPrinting . "', ";
+    $sqlHasStorage =  "'" . $this->hasStorage . "' ";
+
+    $sql=("UPDATE a6_spaces SET " .
+      "name=" . $sqlName .
+      "type=" . $sqlType .
+      "street=" . $sqlStreet .
+      "WHERE spaceID=$this->spaceID");
+
+
     if (mysqli_query($mysqli, $sql)) {
-      echo "New way of doing things has worked.";
+      echo "*******************New way of doing things has worked. \n";
     } else {
-      echo "Still having errors.";
+      echo "*******************Still having errors. \n";
     }
 
     mysqli_close($mysqli);
-    
+    return($sql);
 	}
 
 	public function delete() {

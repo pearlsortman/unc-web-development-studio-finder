@@ -29,48 +29,37 @@ function renderSpace($t) {
     }
 }
 ?>
-<h1>Space Test</h1>
+<h1>SPACE TEST</h1>
 <h2>Retrieving by ID</h2>
 <?php
     $t = Space::findByID(1);
 ?>
-
 <p>
 $t = Space::findByID(1);
 <blockquote>
 	<?php renderSpace($t); ?>
 </blockquote>
 
-<?php
-    $s = Space::findByID(1);
-    $s->setHasParking(0);
-    echo "PARKING SET TO 0 \n";
-?>
 
-<p>
-$s = Space::findByID(1);<br>
-<blockquote>
-    <?php renderSpace($s); ?>
-</blockquote>
+
 
 <?php
-    $s->setHasWifi(0);
     $s = Space::findByID(1);
-    echo "WIFI SET TO 0 (hopefully) \n";
+    $s->setType("fiddle sticks");
+    echo "TYPE SET \n\n\n";
 ?>
-
-<p>
-$s = Space::findByID(1);<br>
-<blockquote>
-    <?php renderSpace($s); ?>
-</blockquote>
 
 <?php
-    $s->setDescription("David's a genious!!!");
     $s = Space::findByID(1);
-    echo "DESCRIPTION UPDATED \n";
+    $s->setName("cheeseburger");
+    echo "NAME SET \n\n\n";
 ?>
 
+<?php
+    $s = Space::findByID(1);
+    $s->setStreet("winder st");
+    echo "ZIP SET \n\n\n";
+?>
 <p>
 $s = Space::findByID(1);<br>
 <blockquote>
