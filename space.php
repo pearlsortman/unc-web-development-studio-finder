@@ -261,8 +261,8 @@ class Space {
       echo "NOT CONNECTED \n";
     }
 
-    $sqlName =        "'" . $mysqli->real_escape_string($this->name) . "' ,";
-    $sqlType =        "'" . $mysqli->real_escape_string($this->type) . "' ,";
+    $sqlName =        "'" . $mysqli->real_escape_string($this->name) . "', ";
+    $sqlType =        "'" . $mysqli->real_escape_string($this->type) . "', ";
     $sqlStreet =      "'" . $mysqli->real_escape_string($this->street) . "', ";
     $sqlCity =        "'" . $mysqli->real_escape_string($this->city) . "', ";
     $sqlState =       "'" . $mysqli->real_escape_string($this->state) . "', ";
@@ -271,7 +271,21 @@ class Space {
 
     $sql=("UPDATE a6_spaces SET " .
       "name=" . $sqlName .
-      "zip=$this->zip " .
+      "type=" . $sqlType .
+      "street=" . $sqlType .
+      "city=" . $sqlCity .
+      "state=" . $sqlState .
+      "zip=$this->zip, " .
+      "logo=$this->logo, " .
+      "description=" . $sqlDescription .
+      "website=" . $sqlWebsite .
+      "numberSeats=$this->numberSeats, " .
+      "hasWifi=$this->hasWifi, " .
+      "hasParking=$this->hasParking, " .
+      "hasDesk=$this->hasDesk, " .
+      "hasBreakroom=$this->hasBreakroom, " .
+      "hasPrinting=$this->hasPrinting, " .
+      "hasStorage=$this->hasStorage " . 
       "WHERE spaceID=$this->spaceID");
 
 
