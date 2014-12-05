@@ -319,7 +319,28 @@ class Space {
 	public function delete() {
     	$con = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
     	$con->query("delete from a6_spaces where spaceID = " . $this->spaceID);
-  	}
+  }
+
+  public function getJSON() {
+    $json_obj = array('spaceID' => $this->spaceID,
+          'name' => $this->name,
+          'type' => $this->type,
+          'street' => $this->street,
+          'city' => $this->city,
+          'state' => $this->state,
+          'zip' => $this->zip,
+          'logo' => $this->logo,
+          'description' => $this->description,
+          'website' => $this->website,
+          'numberSeats' => $this->numberSeats,
+          'hasWifi' => $this->hasWifi,
+          'hasParking' => $this->hasParking,
+          'hasDesk' => $this->hasDesk,
+          'hasBreakroom' => $this->hasBreakroom,
+          'hasPrinting' => $this->hasPrinting,
+          'hasStorage' => $this->hasStorage);
+    return json_encode($json_obj);
+  }
 
 }
 
