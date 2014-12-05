@@ -45,40 +45,30 @@ $t = Space::findByID(1);
 
 
 <?php
-    $s = Space::findByID(1);
+    $s = Space::findByID(4);
     $s->setZip(22222);
     echo "TYPE SET \n\n\n";
 ?>
 
 <?php
-    $s = Space::findByID(1);
-    $s->setCity("Charlotte");
-    echo "TYPE SET \n\n\n";
-?>
-<?php
-    $s = Space::findByID(1);
-    $s->setDescription("boo");
-    echo "NAME SET \n\n\n";
+    // $s = Space::create("Kevin's Space", "Cyberspace", "Milk Dr",
+    //     "Charlotte", "NC", 24924, 0, "It's the best space there is... second to David's!",
+    //     "www.kevin.com", 63, 1, 1, 1, 1, 1, 0);
 ?>
 
 <?php
-    $s = Space::findByID(1);
-    $s->setStreet("kwon st 2");
-    echo "ZIP SET \n\n\n";
+    $s = Space::findByID(5);
+    $s->delete();
+    echo "DELETE EXECUTED \n\n\n";
 ?>
 
-<?php
-    // $s = Space::create("David's Space", "Cyberspace", "Hogwart Dr",
-    //     "Charlotte", "NC", 24924, 0, "It's the best space there is!",
-    //     "www.kwon.com", 13, 1, 1, 1, 1, 1, 0);
-?>
 
 <?php
-    $s = Space::findByID(4);
+    $s = Space::findByID(5);
     echo "FIND MINE \n\n\n";
     ?>
 <p>
-$s = Space::findByID(4);<br>
+$s = Space::findByID(5);<br>
 <blockquote>
     <?php renderSpace($s); ?>
 </blockquote>
