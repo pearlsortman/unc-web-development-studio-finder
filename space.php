@@ -261,26 +261,17 @@ class Space {
       echo "NOT CONNECTED \n";
     }
 
-    $sqlName =    "'" . $mysqli->real_escape_string($this->name) . "' ,";
-    $sqlType =    "'" . $mysqli->real_escape_string($this->type) . "' ,";
-    $sqlStreet =  "'" . $mysqli->real_escape_string($this->street) . "', ";
-    $sqlCity =    "'" . $mysqli->real_escape_string($this->city) . "', ";
-    $sqlState =   "'" . $mysqli->real_escape_string($this->state) . "', ";
-    $sqlZip =     "'" . $this->zip . "', ";
+    $sqlName =        "'" . $mysqli->real_escape_string($this->name) . "' ,";
+    $sqlType =        "'" . $mysqli->real_escape_string($this->type) . "' ,";
+    $sqlStreet =      "'" . $mysqli->real_escape_string($this->street) . "', ";
+    $sqlCity =        "'" . $mysqli->real_escape_string($this->city) . "', ";
+    $sqlState =       "'" . $mysqli->real_escape_string($this->state) . "', ";
     $sqlDescription = "'" . $mysqli->real_escape_string($this->description) . "', ";
     $sqlWebsite =     "'" . $mysqli->real_escape_string($this->website) . "', ";
-    $sqlNumberSeats = "." . $this->numberSeats . "', ";
-    $sqlHasWifi =     "'" . $this->hasWifi . "', ";
-    $sqlHasParking =  "'" . $this->hasParking . "', ";
-    $sqlHasDesk =     "'" . $this->hasDesk . "', ";
-    $sqlHasBreakroom = "'" . $this->hasBreakroom . "', ";
-    $sqlHasPrinting = "'" . $this->hasPrinting . "', ";
-    $sqlHasStorage =  "'" . $this->hasStorage . "' ";
 
     $sql=("UPDATE a6_spaces SET " .
       "name=" . $sqlName .
-      "type=" . $sqlType .
-      "street=" . $sqlStreet .
+      "zip=$this->zip " .
       "WHERE spaceID=$this->spaceID");
 
 

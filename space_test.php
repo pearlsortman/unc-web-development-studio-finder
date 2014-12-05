@@ -45,13 +45,13 @@ $t = Space::findByID(1);
 
 <?php
     $s = Space::findByID(1);
-    $s->setType("fiddle sticks");
+    $s->setZip(44445);
     echo "TYPE SET \n\n\n";
 ?>
 
 <?php
     $s = Space::findByID(1);
-    $s->setName("cheeseburger");
+    $s->setName("hamburger");
     echo "NAME SET \n\n\n";
 ?>
 
