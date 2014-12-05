@@ -13,7 +13,7 @@ class Space {
 	private $website;
 	private $numberSeats;
 	private $hasWifi;
-	private $hasParking;
+	private $hasParking ;
 	private $hasDesk;
 	private $hasBreakroom;
 	private $hasPrinting;
@@ -27,7 +27,7 @@ class Space {
 
 		$result = $con->query("insert into a6_spaces values (0, " . 
 			                     ", " .  $name . ", " . $type . ", " . $street . ", " . $city . ", " . $state . ", " . $zip . ", " . $logo . 
-			                     ", " . $logo . ", " . $description . ", " . $website . ", " . $numberSeats . ", " . $hasWifi . ", " . $hasParking . 
+                           ", " . $description . ", " . $website . ", " . $numberSeats . ", " . $hasWifi . ", " . $hasParking . 
 			                     ", " . $hasDesk . ", " . $hasBreakroom . ", " . $hasPrinting . ", " . $hasStorage . ")");
 
 		 if ($result) {
@@ -47,6 +47,9 @@ class Space {
 				return null;
 			}
 			$spaces_info = $result->fetch_array();
+
+      $spaces_info['numberSeats'] = 0;
+      $spaces_info['logo'] = 0;
 			return new Space($spaces_info['spaceID'],
 					       $spaces_info['name'],
 					       $spaces_info['type'],
@@ -272,7 +275,7 @@ class Space {
     $sql=("UPDATE a6_spaces SET " .
       "name=" . $sqlName .
       "type=" . $sqlType .
-      "street=" . $sqlType .
+      "street=" . $sqlStreet .
       "city=" . $sqlCity .
       "state=" . $sqlState .
       "zip=$this->zip, " .

@@ -15,6 +15,7 @@ function renderSpace($t) {
     <li>city =          <?php print($t->getCity())?></li>
     <li>state =         <?php print($t->getState())?></li>
     <li>zip =           <?php print($t->getZip())?></li>
+    <li>logo =          <?php print($t->getLogo())?></li>
     <li>description =   <?php print($t->getDescription())?></li>
     <li>website =       <?php print($t->getWebsite())?></li>
     <li>numberSeats =   <?php print($t->getNumberSeats())?></li>
@@ -45,19 +46,24 @@ $t = Space::findByID(1);
 
 <?php
     $s = Space::findByID(1);
-    $s->setZip(44445);
+    $s->setZip(22222);
     echo "TYPE SET \n\n\n";
 ?>
 
 <?php
     $s = Space::findByID(1);
-    $s->setName("hamburger");
+    $s->setCity("Charlotte");
+    echo "TYPE SET \n\n\n";
+?>
+<?php
+    $s = Space::findByID(1);
+    $s->setDescription("boo");
     echo "NAME SET \n\n\n";
 ?>
 
 <?php
     $s = Space::findByID(1);
-    $s->setStreet("winder st");
+    $s->setStreet("kwon st 2");
     echo "ZIP SET \n\n\n";
 ?>
 <p>
