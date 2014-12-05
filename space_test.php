@@ -66,8 +66,19 @@ $t = Space::findByID(1);
     $s->setStreet("kwon st 2");
     echo "ZIP SET \n\n\n";
 ?>
+
+<?php
+    // $s = Space::create("David's Space", "Cyberspace", "Hogwart Dr",
+    //     "Charlotte", "NC", 24924, 0, "It's the best space there is!",
+    //     "www.kwon.com", 13, 1, 1, 1, 1, 1, 0);
+?>
+
+<?php
+    $s = Space::findByID(4);
+    echo "FIND MINE \n\n\n";
+    ?>
 <p>
-$s = Space::findByID(1);<br>
+$s = Space::findByID(4);<br>
 <blockquote>
     <?php renderSpace($s); ?>
 </blockquote>

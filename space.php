@@ -23,18 +23,32 @@ class Space {
 	 public static function create($name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberSeats, $hasWifi, $hasParking,
 	 	$hasDesk, $hasBreakroom, $hasPrinting, $hasStorage) {
 
-		$con = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
+		$mysqli = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
 
-		$result = $con->query("insert into a6_spaces values (0, " . 
-			                     ", " .  $name . ", " . $type . ", " . $street . ", " . $city . ", " . $state . ", " . $zip . ", " . $logo . 
-                           ", " . $description . ", " . $website . ", " . $numberSeats . ", " . $hasWifi . ", " . $hasParking . 
+    $sqlName =        "'" . $mysqli->real_escape_string($name) . "', ";
+    $sqlType =        "'" . $mysqli->real_escape_string($type) . "', ";
+    $sqlStreet =      "'" . $mysqli->real_escape_string($street) . "', ";
+    $sqlCity =        "'" . $mysqli->real_escape_string($city) . "', ";
+    $sqlState =       "'" . $mysqli->real_escape_string($state) . "', ";
+    $sqlDescription = "'" . $mysqli->real_escape_string($description) . "', ";
+    $sqlWebsite =     "'" . $mysqli->real_escape_string($website) . "', ";
+
+		$sql = ("INSERT INTO a6_spaces VALUES (0, " . $sqlName . $sqlType . $sqlStreet . $sqlCity . $sqlState . $zip . ", " . $logo . 
+                           ", " . $sqlDescription . $sqlWebsite . $numberSeats . ", " . $hasWifi . ", " . $hasParking . 
 			                     ", " . $hasDesk . ", " . $hasBreakroom . ", " . $hasPrinting . ", " . $hasStorage . ")");
 
-		 if ($result) {
-			$new_id = $mysqli->insert_id;
-			return new Space($new_id, $name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberSeats, $hasWifi, $hasParking,
-				$hasDesk, $hasBreakroom, $hasPrinting, $hasStorage);
-		}
+    if (mysqli_query($mysqli, $sql)) {
+      echo "*******************CREATED RECORD \n";
+      $new_id = $mysqli->insert_id;
+      echo $new_id;
+      return new Space($new_id, $name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberSeats, $hasWifi, $hasParking,
+        $hasDesk, $hasBreakroom, $hasPrinting, $hasStorage);
+    
+    } else {
+      echo "*******************RECORD NOT CREATED \n";
+    }
+
+		 
 		
 		return null;
 	}
