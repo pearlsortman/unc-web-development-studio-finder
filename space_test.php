@@ -57,9 +57,9 @@ $t = Space::findByID(1);
 ?>
 
 <?php
-    $s = Space::findByID(5);
-    $s->delete();
-    echo "DELETE EXECUTED \n\n\n";
+    // $s = Space::findByID(5);
+    // $s->delete();
+    // echo "DELETE EXECUTED \n\n\n";
 ?>
 
 
