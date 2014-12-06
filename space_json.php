@@ -12,8 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
   // Following matches instance URL in form
   // /space.php/<type>
+	print("Test Good");
 
-	if((count($path_components) >= 2) &&
+	if((count($path_components) == 2) &&
 		($path_components[1] != '')) {
 
 		// Interpret <type> as string
@@ -32,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		// Normal lookup.
 		// Generate JSON encoding as response
 		header("Content-type: application/json");
-		echo($space);
+		print($space);
 		exit();
 		}
 		
