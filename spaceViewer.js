@@ -1,4 +1,5 @@
-var url_base = "http://wwwx.cs.unc.edu/Courses/comp426-f14/sortman/final";
+/*var url_base = "http://wwwx.cs.unc.edu/Courses/comp426-f14/sortman/final";*/
+var url_base = "http://localhost/comp426_nebula/";
 
 $(document).ready(function () {
 
@@ -34,24 +35,7 @@ $(document).ready(function () {
 		}
 	);
 
-	$('#hacker').on('click',
-		function (e) {
-			e.preventDefault();
-			$.ajax(url_base + "/space.php",
-			{
-				type: "POST",
-				dataType: "json",
-				data: $(this).serialize(),
-				success: function (space_json, status, jqXHR) {
-					var s = new Space(space_json);
-					load_space_item_byType(s.makeSearchResultDiv());
-				},
-				error: function (jqXHR, status, error) {
-					alert(jqXHR.responseText);
-				}
-			});
-		}
-	);
+	$('#hacker').on('click', load_space_item_byType("Hackspace"));
 
 /*	$('#writing').on('click')
 
@@ -67,6 +51,7 @@ $(document).ready(function () {
 });
 
 var load_space_item_byType = function (type) {
+	alert("loading space by type");
 	$.ajax(url_base + "/space.php/" + type,
 	{	
 		type: "GET",

@@ -19,6 +19,7 @@ var Space = function(space_json) {
 };
 
 Space.prototype.makeSearchResultDiv = function() {
+	alert ("MAKING PROTOTYPE Search Result Div");
 	var spaceDiv = $("<div></div>");
 	spaceDiv.addClass('result');
 
