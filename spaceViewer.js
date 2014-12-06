@@ -1,10 +1,4 @@
 /*var url_base = "http://wwwx.cs.unc.edu/Courses/comp426-f14/sortman/final";*/
-<<<<<<< HEAD
-var url_base = "http://localhost/Github/comp426_nebula";
-
-$(document).ready(function () {
-
-=======
 var url_base = "http://localhost/comp426_nebula";
 
 $(document).ready(function () {
@@ -21,7 +15,6 @@ $(document).ready(function () {
 		}
 	);*/
 
->>>>>>> origin/master
 
 /*	$('#search-bar').on('submit',
 		function (e) {
