@@ -16,38 +16,26 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 	if((count($path_components) >= 2) &&
 		($path_components[1] != '')) {
 
-		// Interpret <id> as integer
-		$space_id = intval($path_components[1]);
+		// Interpret <type> as string
+		$type = trim($path_components[1]);
 
-		// Look up object via ORM
-		$space = Space::findByID($space_id);
+		// Look up object via ORM. $space is an array of json_encoded values
+		$space = Space::findByType($type);
 
 		if ($space == null) {
 			// Space not found.
 			header("HTTP/1.0 404 Not Found");
-			print("Space id: " . $space_id . " not found.");
-			exit();
-		}
-
-		// Check to see if deleting
-		if (isset($_REQUEST['delete'])) {
-			$space->delete();
-			header("Content-type: application/json");
-			print(json_encode(true));
+			print("Space type: " . $type . " not found.");
 			exit();
 		}
 
 		// Normal lookup.
 		// Generate JSON encoding as response
 		header("Content-type: application/json");
-		print($space->getJSON());
+		print($space);
 		exit();
 		}
 
-	// ID not specified, then must be asking for index
-		header("Content-type: application/json");
-		print(json_encode(Space::getAllIDs()));
-		exit();
 		
 } else if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
