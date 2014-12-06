@@ -22,5 +22,19 @@ Space.prototype.makeSearchResultDiv = function() {
 	var spaceDiv = $("<div></div>");
 	spaceDiv.addClass('result');
 
-	var 
+	var h3_name = $("<h3></h3>");
+	h3_name.addClass('name');
+	h3_name.html(this.name);
+	spaceDiv.append(h3_name);
+
+	var tr_website = $("<tr></tr>");
+	website.html(this.website);
+
+	var street
+
+	var divTable = $("<table></table>");
+	divTable.addClass('resultTable');
+	spaceDiv.append(divTable);
+
+	return spaceDiv;
 };
