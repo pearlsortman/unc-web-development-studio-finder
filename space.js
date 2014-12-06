@@ -20,6 +20,8 @@ var Space = function(space_json) {
 
 Space.prototype.makeSearchResultDiv = function() {
 	alert ("MAKING PROTOTYPE Search Result Div");
+	alert("name: " + this.name);
+	alert("type: " + this.type);
 	var spaceDiv = $("<div></div>");
 	spaceDiv.addClass('result');
 
@@ -40,6 +42,8 @@ Space.prototype.makeSearchResultDiv = function() {
 	var divTable = $("<table></table>");
 	divTable.addClass('resultTable');
 	spaceDiv.append(divTable);
+
+	$('#results').append(spaceDiv);
 
 	return spaceDiv;
 };
