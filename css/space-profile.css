@@ -1,5 +1,6 @@
 body {
-	background-image: url("http://i61.tinypic.com/k3noyu.jpg");
+	background-color: #8a005a;
+background-image: url(http://www.transparenttextures.com/patterns/cardboard-flat.png);
 	width: 100%;
 	color: black;
 	margin: 0;
@@ -14,12 +15,12 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 5.5em;
+	font-size: 5.0em;
 	font-weight: 200;
 }
 
 h2 {
-	font-size: 3em;
+	font-size: 2.5em;
 }
 
 h3 {
@@ -34,7 +35,7 @@ div {
 	padding: 5px;
 }
 
-.map, .details, .footer, .nav {
+.map, .details, .footer, #nav {
 	float: none;
 	padding: 20px;
 	vertical-align: top;
@@ -61,24 +62,66 @@ div {
 	width: 900px;
 }
 
-.header {
-	background-image: url("http://i61.tinypic.com/k3noyu.jpg");
+div.header {
+	background-color: #C299AD;
 	background-attachment: fixed;
-	color: white;
+	color: #660033;
 	margin: 0;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
 }
 
 /*FOOTER STYLING*/
 
-.nav {
+/*#nav {
 	margin: auto;
 	font-size: 2em;
 	width: 860px;
 	text-align: left;
+}*/
+
+.metro-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .metro-nav li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+  .metro-nav li a {
+    display: block;
+    padding: 10px;
+    transition: all 0.1s;
+  } 
+
+  .metro-nav {
+  background: #9c3;
+  width: 80%;
+  margin: 20px auto;
+}
+.metro-nav li {
+  margin: 0px;
+}
+.metro-nav li a {
+  color: #590;
+  text-decoration: none;
+  padding: 20px 25px;
+  margin: 0;
+}
+
+.metro-nav li a:hover,
+.metro-nav li a.active {
+  color: #250;
+  background: #8b3;
 }
 
 .footer {
 	margin: auto;
+	height: 5px;
 	font-size: 0.75em;
-	width: 860px;
+	width: 100%;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
 }
