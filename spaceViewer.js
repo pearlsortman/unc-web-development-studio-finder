@@ -1,9 +1,9 @@
 /*var url_base = "http://wwwx.cs.unc.edu/Courses/comp426-f14/sortman/final";*/
-var url_base = "http://localhost/comp426_nebula/";
+var url_base = "http://localhost/comp426_nebula";
 
 $(document).ready(function () {
 
-	$.ajax(url_base + "/space_json.php",
+/*	$.ajax(url_base + "/space_json.php",
 		{
 			type: "GET",
 			dataType: "json",
@@ -13,10 +13,10 @@ $(document).ready(function () {
 				}
 			}
 		}
-	);
+	);*/
 
 
-	$('#search-bar').on('submit',
+/*	$('#search-bar').on('submit',
 		function (e) {
 			e.preventDefault();
 			$.ajax(url_base + "/space_json.php",
@@ -33,25 +33,31 @@ $(document).ready(function () {
 				}
 			});
 		}
-	);
+	);*/
 
-	$('#hacker').on('click', load_space_item_byType("Hackspace"));
+	$('#hacker').click(function () {
+		load_space_item_byType("Hackspace");
+	});
+	$('#writing').click(function () {
+		load_space_item_byType("Writerspace");
+	});
+	$('#art').click(function() {
+		load_space_item_byType("Artspace");
+	});
+	$('#music').click(function() {
+		load_space_item_byType("Musicspace");
+	});
+	$('#coworking').click(function() {
+		load_space_item_byType("Coworkingspace");
+	});
+	$('#maker').click(function() {
+		load_space_item_byType("Makerspace");
+	});
 
-/*	$('#writing').on('click')
-
-	$('#music').on('click')
-
-	$('#art').on('click')
-
-	$('#coworking').on('click',
-		)
-
-	$('#maker').on('click',
-		)*/
 });
 
 var load_space_item_byType = function (type) {
-	alert("loading space by type");
+	alert(url_base + "/space_json.php/" + type);
 	$.ajax(url_base + "/space_json.php/" + type,
 	{	
 		type: "GET",
