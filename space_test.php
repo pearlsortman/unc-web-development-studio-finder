@@ -45,8 +45,20 @@ $t = Space::findByID(1);
 
 
 <?php
-    echo "\n\n\nFINDING Cyberspace \n\n\n";
-    $s = Space::findByType("Cyberspace");
+    echo "\n\n\nFINDING CYBERSPACE AND CHARLOTTE, NC \n\n\n";
+    $s = Space::findByTypeAndLocation("Cyberspace", "Charlotte", "NC");
+    echo $s;
+?>
+
+<?php
+    echo "\n\n\nSET CITY \n\n\n";
+    $s = Space::findByID(6);
+    $s->setCity("Charlotte");
+?>
+
+<?php
+    echo "\n\n\nFINDING CHARLOTTE, NC SECOND TIME \n\n\n";
+    $s = Space::findByLocation("Charlotte", "NC");
     echo $s;
 ?>
 
@@ -65,7 +77,7 @@ $t = Space::findByID(1);
 
 <?php
      $s = Space::findByID(6);
-     echo "FIND NON-CYBERSPACE \n\n\n";
+     echo "FIND NON-CHARLOTTE \n\n\n";
     ?>
 <p>
  $s = Space::findByID(6);<br>

@@ -136,6 +136,85 @@ class Space {
          return $jsonString;
     }
 
+    public static function findByLocation($city, $state) {
+      $con = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
+
+      $sqlCity = "'" . $con->real_escape_string($city) . "' && ";
+      $sqlState = "'" . $con->real_escape_string($state) . "'";
+
+      $result = $con->query("SELECT * FROM a6_spaces WHERE " . "city=" . $sqlCity . "state=" . $sqlState);
+
+            $json = array();
+        if ($result->num_rows != 0)
+        {
+            while ($row = $result->fetch_array())
+            {
+                $json[]= array(
+                    'spaceID' => $row[0],
+                    'name' => $row[1],
+                    'type' => $row[2],
+                    'street' => $row[3],
+                    'city' => $row[4],
+                    'state' => $row[5],
+                    'zip' => $row[6],
+                    'logo' => $row[7],
+                    'description' => $row[8],
+                    'website' => $row[9],
+                    'numberSeats' => $row[10],
+                    'hasWifi' => $row[11],
+                    'hasParking' => $row[12],
+                    'hasDesk' => $row[13],
+                    'hasBreakroom' => $row[14],
+                    'hasPrinting' => $row[15],
+                    'hasStorage' => $row[16]
+                );
+            }
+            header('Content-Type: application/json');
+            $jsonString = json_encode($json);
+         }
+         return $jsonString;
+    }
+
+    public static function findByTypeAndLocation($type, $city, $state) {
+      $con = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
+
+      $sqlType = "'" . $con->real_escape_string($type) . "' &&";
+      $sqlCity = "'" . $con->real_escape_string($city) . "' && ";
+      $sqlState = "'" . $con->real_escape_string($state) . "'";
+
+      $result = $con->query("SELECT * FROM a6_spaces WHERE " . "type=" . $sqlType . "city=" . $sqlCity . "state=" . $sqlState);
+
+            $json = array();
+        if ($result->num_rows != 0)
+        {
+            while ($row = $result->fetch_array())
+            {
+                $json[]= array(
+                    'spaceID' => $row[0],
+                    'name' => $row[1],
+                    'type' => $row[2],
+                    'street' => $row[3],
+                    'city' => $row[4],
+                    'state' => $row[5],
+                    'zip' => $row[6],
+                    'logo' => $row[7],
+                    'description' => $row[8],
+                    'website' => $row[9],
+                    'numberSeats' => $row[10],
+                    'hasWifi' => $row[11],
+                    'hasParking' => $row[12],
+                    'hasDesk' => $row[13],
+                    'hasBreakroom' => $row[14],
+                    'hasPrinting' => $row[15],
+                    'hasStorage' => $row[16]
+                );
+            }
+            header('Content-Type: application/json');
+            $jsonString = json_encode($json);
+         }
+         return $jsonString;
+    }
+
   	private function __construct($spaceID, $name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberSeats, $hasWifi, $hasParking,
 	 	$hasDesk, $hasBreakroom, $hasPrinting, $hasStorage) {
     	$this->spaceID = $spaceID;
