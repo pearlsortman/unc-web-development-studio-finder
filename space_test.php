@@ -45,13 +45,13 @@ $t = Space::findByID(1);
 
 
 <?php
-    $s = Space::findByID(4);
-    $s->setZip(22222);
-    echo "TYPE SET \n\n\n";
+    echo "\n\n\nFINDING Cyberspace \n\n\n";
+    $s = Space::findByType("Cyberspace");
+    echo $s;
 ?>
 
 <?php
-    // $s = Space::create("Kevin's Space", "Cyberspace", "Milk Dr",
+    // $s = Space::create("Kevin's Space", "Hackspace", "Milk Dr",
     //     "Charlotte", "NC", 24924, 0, "It's the best space there is... second to David's!",
     //     "www.kevin.com", 63, 1, 1, 1, 1, 1, 0);
 ?>
@@ -64,11 +64,11 @@ $t = Space::findByID(1);
 
 
 <?php
-    $s = Space::findByID(5);
-    echo "FIND MINE \n\n\n";
+     $s = Space::findByID(6);
+     echo "FIND NON-CYBERSPACE \n\n\n";
     ?>
 <p>
-$s = Space::findByID(5);<br>
+ $s = Space::findByID(6);<br>
 <blockquote>
     <?php renderSpace($s); ?>
-</blockquote>
+</blockquote> 

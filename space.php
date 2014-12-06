@@ -102,7 +102,7 @@ class Space {
     public static function findByType($type) {
       $con = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
 
-      $sqlType =        "'" . $mysqli->real_escape_string($type) . "'";
+      $sqlType = "'" . $con->real_escape_string($type) . "'";
       $result = $con->query("SELECT * FROM a6_spaces WHERE type=" . $sqlType);
 
       $json = array();
@@ -111,7 +111,7 @@ class Space {
             while ($row = $result->fetch_array())
             {
                 $json[]= array(
-                    'spaceID' = $row[0],
+                    'spaceID' => $row[0],
                     'name' => $row[1],
                     'type' => $row[2],
                     'street' => $row[3],
@@ -130,13 +130,10 @@ class Space {
                     'hasStorage' => $row[16]
                 );
             }
-            header('Content-Type: application/json; charset=utf-8');
+            header('Content-Type: application/json');
             $jsonString = json_encode($json);
-            echo $jsonString;
          }
-    }
-
-    return $jsonString;
+         return $jsonString;
     }
 
   	private function __construct($spaceID, $name, $type, $street, $city, $state, $zip, $logo, $description, $website, $numberSeats, $hasWifi, $hasParking,
