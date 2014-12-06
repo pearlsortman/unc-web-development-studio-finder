@@ -14,11 +14,21 @@ body {
 }
 
 .nav {
-    background-color: black;
     color: white;
     margin: 10px;
     padding: 10px;
     height: 50px;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+a :hover{
+    color: #CC0066;
 }
 
 .secondaryDiv {
@@ -35,6 +45,8 @@ body {
 
 #footer {
     clear: both;
+    margin-top: 30px;
+    margin-bottom: 0px;
 }
 
 
@@ -51,8 +63,9 @@ body {
 	margin: auto;
 }
 
-#container p{
-	font-size: 1.25em;
+#categories p{
+    font-size: 0.8em;
+    text-align: center;
 }
 
 /*BUTTON STYLING*/
@@ -70,13 +83,14 @@ h1{
 	font-weight: 200;
 	font-style: italic;
 	font-size: 4em;
-	margin-bottom: 0px;
+	margin-bottom: 40px;
+    margin-top: 0px;
 }
 
 /*SEARCH BAR STYLING*/
 .search-rounded { 
 	padding:6px 15px 6px 15px;
-	margin:3px;
+	margin-top:10px;
     border-radius:15px; 
     -moz-border-radius:15px; 
     -webkit-border-radius:15px; 
@@ -84,16 +98,16 @@ h1{
 
 input[type=text]{
 	color:#bcbcbc;
-	font-size: 3em;
+	font-size: 1em;
 	font-family: 'Titillium Web', sans-serif;
-    width: 100%;
+    width: 300px;
 }
 
 #search-bar input[type=text]{
-	border:1px solid #2a2e31;
-	background-color:#2d3035;
+	border:1px solid rgba(63,147,147, 0.8);
+	background-color:rgba(63,147,147, 0.8);
 	color:#505358;
-	height: 80px;
+	height: 40px;
 }
 
 /*BUTTON SYTYLING*/
@@ -117,8 +131,8 @@ input[type=text]{
 }
  
 .ch-grid li {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     display: inline-block;
     margin: 5px;
 }
@@ -210,8 +224,4 @@ input[type=text]{
 
 .ch-item:hover .ch-info p {
     opacity: 1;
-}
-
-#footer {
-    margin-top: 30px;
 }
