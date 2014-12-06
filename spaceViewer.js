@@ -1,19 +1,16 @@
 /*var url_base = "http://wwwx.cs.unc.edu/Courses/comp426-f14/sortman/final";*/
-var url_base = "http://localhost/comp426_nebula";
+var url_base = "http://localhost/Github//comp426_nebula";
 
 $(document).ready(function () {
 
-/*	$.ajax(url_base + "/space_json.php",
-		{
-			type: "GET",
-			dataType: "json",
-			success: function(space_ids, status, jqXHR) {
-				for (var i=0; i<space_ids.length; i++) {
-					load_space_item(space_ids[i]);
-				}
-			}
-		}
-	);*/
+	// $.ajax(url_base + "/space_json.php/Cyberspace",
+	// 	{
+	// 		type: "GET",
+	// 		dataType: "json",
+	// 		success: function(space_ids, status, jqXHR) {
+	// 		}
+	// 	}
+	// );
 
 
 /*	$('#search-bar').on('submit',
@@ -35,9 +32,12 @@ $(document).ready(function () {
 		}
 	);*/
 
-	$('#hacker').click(function () {
-		load_space_item_byType("Hackspace");
-	});
+	// $('#hacker').click(function () {
+	// 	load_space_item_byType("Hackspace");
+	// });
+
+	$('#hacker').on('click', load_space_item_byType("Hackspace"));
+	
 	$('#writing').click(function () {
 		load_space_item_byType("Writerspace");
 	});
@@ -57,29 +57,25 @@ $(document).ready(function () {
 });
 
 var load_space_item_byType = function (type) {
-	alert(url_base + "/space_json.php/" + type);
 	$.ajax(url_base + "/space_json.php/" + type,
-	{	
-		type: "GET",
-		dataType: "json",
-		success: function(space_json, status, jqXHR) {
-			alert("loading space item by type success");
-			var s = new Space(space_json);
-			$('#results').append(s.makeSearchResultDiv());
+		{
+			type: "GET",
+			dataType: "json",
+			success: function(space_ids, status, jqXHR) {
+			}
 		}
-	});
+	);
 };		
 
 var load_space_item_byLocation = function (city, state) {
-	$.ajax(url_base + "/space_json.php/" + city + "/" + state,
-	{
-		type: "GET",
-		dataType: "json",
-		success: function(space_json, status, jqXHR) {
-			var s = new Space(space_json);
-			$('#results').append(s.makeSearchResultDiv());
+	$.ajax(url_base + "/space_json.php/" + city  + "/" + state,
+		{
+			type: "GET",
+			dataType: "json",
+			success: function(space_ids, status, jqXHR) {
+			}
 		}
-	});
+	);
 };
 
 var load_space_item_byTypeAndLocation = function (type, city, state) {
