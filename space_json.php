@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		// Normal lookup.
 		// Generate JSON encoding as response
 		header("Content-type: application/json");
-		print($space);
+		echo($space);
 		exit();
 		}
 		
