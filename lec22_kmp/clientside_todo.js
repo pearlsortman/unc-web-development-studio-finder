@@ -5,9 +5,9 @@ var Todo = function(todo_json) {
     this.note = todo_json.note;
     this.project = todo_json.project;
     if (todo_json.due_date) {
-	this.due_date = new Date(todo_json.due_date);
+    this.due_date = new Date(todo_json.due_date);
     } else {
-	this.due_date = null;
+    this.due_date = null;
     }
     this.priority = todo_json.priority;
     this.complete = todo_json.complete;
@@ -25,9 +25,9 @@ Todo.prototype.makeCompactDiv = function() {
     var due_date_div = $("<div></div>");
     due_date_div.addClass('due');
     if (this.due_date) {
-	due_date_div.html(this.due_date.toDateString());
+    due_date_div.html(this.due_date.toDateString());
     } else {
-	due_date_div.html("No due date");
+    due_date_div.html("No due date");
     }
     cdiv.append(due_date_div);
 
@@ -54,9 +54,9 @@ Todo.prototype.makeEditDiv = function() {
 
     ediv_form.append("Due Date: ");
     if (this.due_date) {
-	ediv_form.append($("<input type='text' name='due_date'>").val(this.due_date.toDateString()));
+    ediv_form.append($("<input type='text' name='due_date'>").val(this.due_date.toDateString()));
     } else {
-	ediv_form.append($("<input type='text' name='due_date'>"));
+    ediv_form.append($("<input type='text' name='due_date'>"));
     }
     ediv_form.append("<br>");
 
@@ -67,7 +67,7 @@ Todo.prototype.makeEditDiv = function() {
     ediv_form.append("Complete ");
     complete_checkbox = $("<input type='checkbox' name='complete' value=1>");
     if (this.complete) {
-	complete_checkbox[0].checked = true;
+    complete_checkbox[0].checked = true;
     }
     ediv_form.append(complete_checkbox);
     ediv_form.append("<br>");
