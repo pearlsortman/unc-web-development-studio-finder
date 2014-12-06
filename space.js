@@ -28,9 +28,13 @@ Space.prototype.makeSearchResultDiv = function() {
 	spaceDiv.append(h3_name);
 
 	var tr_website = $("<tr></tr>");
-	website.html(this.website);
+	tr_website.html(this.website);
 
-	var street
+	var tr_street = $("<tr></tr>");
+	tr_street.html(this.street);
+
+	var tr_city_state_zip = $("<tr></tr>");
+	tr_city_state_zip.html(this.city + ", " + this.state + this.zip);
 
 	var divTable = $("<table></table>");
 	divTable.addClass('resultTable');
