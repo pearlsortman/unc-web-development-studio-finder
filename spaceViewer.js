@@ -70,6 +70,7 @@ var load_space_item_byType = function (type) {
 		type: "GET",
 		dataType: "json",
 		success: function(space_json, status, jqXHR) {
+			alert("loading space item by type success");
 			var s = new Space(space_json);
 			$('#results').append(s.makeSearchResultDiv());
 		}
