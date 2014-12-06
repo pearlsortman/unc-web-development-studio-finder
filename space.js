@@ -19,9 +19,6 @@ var Space = function(space_json) {
 };
 
 Space.prototype.makeSearchResultDiv = function() {
-	alert ("MAKING PROTOTYPE Search Result Div");
-	alert("name: " + this.name);
-	alert("type: " + this.type);
 	var spaceDiv = $("<div></div>");
 	spaceDiv.addClass('result');
 
@@ -30,20 +27,23 @@ Space.prototype.makeSearchResultDiv = function() {
 	h3_name.html(this.name);
 	spaceDiv.append(h3_name);
 
+	var divTable = $("<table></table>");
+	divTable.addClass('resultTable');
+	divTable.appendTo(spaceDiv);
+
 	var tr_website = $("<tr></tr>");
 	tr_website.html(this.website);
+	tr_website.appendTo(divTable);
 
 	var tr_street = $("<tr></tr>");
 	tr_street.html(this.street);
+	tr_street.appendTo(divTable);
 
 	var tr_city_state_zip = $("<tr></tr>");
-	tr_city_state_zip.html(this.city + ", " + this.state + this.zip);
+	tr_city_state_zip.html(this.city + ", " + this.state + " " + this.zip);
+	tr_city_state_zip.appendTo(divTable);
 
-	var divTable = $("<table></table>");
-	divTable.addClass('resultTable');
-	spaceDiv.append(divTable);
-
-	$('#results').append(spaceDiv);
+	spaceDiv.appendTo($('#results'));
 
 	return spaceDiv;
 };
