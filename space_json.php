@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
   // Following matches instance URL in form
   // /space.php/<type>
-	print("Test Good");
 
 	if((count($path_components) == 2) &&
 		($path_components[1] != '')) {

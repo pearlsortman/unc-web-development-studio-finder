@@ -1,19 +1,7 @@
 /*var url_base = "http://wwwx.cs.unc.edu/Courses/comp426-f14/sortman/final";*/
-var url_base = "http://localhost/comp426_nebula/";
+var url_base = "http://localhost/Github/comp426_nebula";
 
 $(document).ready(function () {
-
-	$.ajax(url_base + "/space_json.php",
-		{
-			type: "GET",
-			dataType: "json",
-			success: function(space_ids, status, jqXHR) {
-				for (var i=0; i<space_ids.length; i++) {
-					load_space_item(space_ids[i]);
-				}
-			}
-		}
-	);
 
 
 	$('#search-bar').on('submit',
