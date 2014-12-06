@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
   // GET means either instance look up, index generation, or deletion
 
   // Following matches instance URL in form
-  // /space.php/<id>
+  // /space.php/<type>
 
 	if((count($path_components) >= 2) &&
 		($path_components[1] != '')) {
@@ -35,6 +35,54 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		print($space);
 		exit();
 		}
+		
+	if ((count($path_components) == 3) && ($path_components[1] != '') && 
+		($path_components[2] != '')) {
+
+		// Interpret as location lookup
+		$city = trim($path_components[1]);
+		$state = trim($path_components[2]);
+
+		// Look up object via ORM.
+		$space = Space::findByLocation($city, $state);
+
+		if ($space == null) {
+			// Space not found.
+			header("HTTP/1.0 404 Not Found");
+			print("Space location: " . $city . ", " . $state . " not found.");
+			exit();
+		}
+
+		// Generate JSON encoding as response
+		header("Content-type: application/json");
+		print($space);
+		exit();
+	} 
+
+	if ((count($path_components) == 4) && ($path_components[1] != '') &&
+		($path_components[2] != '') && ($path_components[3] != '')) {
+
+		// Interpret as type and location lookup
+
+		$type = trim($path_components[1]);
+		$city = trim($path_components[2]);
+		$state = trim($path_components[3]);
+
+		// Look up object via ORM
+		$space = Space::findByTypeAndLocation($type, $city, $state);
+
+		if ($space == null) {
+			// Space not found.
+			header("HTTP/1.0 404 Not Found");
+			print("Space type: " . $type . " and location: " . $city . ", " . $state . " not found.");
+			exit();
+		}
+
+		// Generate JSON encoding as response
+		header("Content-type: application/json");
+		print($space);
+		exit();
+	}
 
 		
 } else if ($_SERVER['REQUEST_METHOD'] == "POST") {
