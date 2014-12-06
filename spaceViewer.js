@@ -3,7 +3,7 @@ var url_base = "http://localhost/comp426_nebula/";
 
 $(document).ready(function () {
 
-	$.ajax(url_base + "/space.php",
+	$.ajax(url_base + "/space_json.php",
 		{
 			type: "GET",
 			dataType: "json",
@@ -19,7 +19,7 @@ $(document).ready(function () {
 	$('#search-bar').on('submit',
 		function (e) {
 			e.preventDefault();
-			$.ajax(url_base + "/space.php",
+			$.ajax(url_base + "/space_json.php",
 			{
 				type: "POST",
 				dataType: "json",
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
 var load_space_item_byType = function (type) {
 	alert("loading space by type");
-	$.ajax(url_base + "/space.php/" + type,
+	$.ajax(url_base + "/space_json.php/" + type,
 	{	
 		type: "GET",
 		dataType: "json",
@@ -64,7 +64,7 @@ var load_space_item_byType = function (type) {
 };		
 
 var load_space_item_byLocation = function (city, state) {
-	$.ajax(url_base + "/space.php/" + city + "/" + state,
+	$.ajax(url_base + "/space_json.php/" + city + "/" + state,
 	{
 		type: "GET",
 		dataType: "json",
@@ -76,7 +76,7 @@ var load_space_item_byLocation = function (city, state) {
 };
 
 var load_space_item_byTypeAndLocation = function (type, city, state) {
-	$.ajax(url_base + "/space.php/" + type + "/" + city + "/" + state,
+	$.ajax(url_base + "/space_json.php/" + type + "/" + city + "/" + state,
 	{
 		type: "GET",
 		dataType: "json",
