@@ -12,6 +12,23 @@ $(document).ready(function () {
 				}
 			}
 		});
+
+
+	$('#search-bar').on('submit',
+		function (e) {
+			e.preventDefault();
+		}
+		)
+
+	$('#hacker').on('click')
+
+	$('#writing').on('click')
+
+	$('#music').on('click')
+
+	$('#art').on('click')
+
+	$('#')
 });
 
 var load_space_item = function (id) {
