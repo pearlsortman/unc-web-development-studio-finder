@@ -202,7 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
     	$new_logo = false;
     	if (isset($_REQUEST['logo'])) {
-      		$new_logo = intval($_REQUEST['logo']);
+      		$new_logo = trim($_REQUEST['logo']);
     	}
 
     	$new_numberSeats = false;
@@ -376,7 +376,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
     	$new_logo = false;
     	if (isset($_REQUEST['logo'])) {
-      		$new_logo = intval($_REQUEST['logo']);
+      		$new_logo = trim($_REQUEST['logo']);
     	}
 
     	$new_numberSeats = false;

@@ -63,7 +63,7 @@ class Space {
 			$spaces_info = $result->fetch_array();
 
       $spaces_info['numberSeats'] = 0;
-      $spaces_info['logo'] = 0;
+      $spaces_info['logo'] = "null";
 			return new Space($spaces_info['spaceID'],
 					       $spaces_info['name'],
 					       $spaces_info['type'],
