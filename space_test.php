@@ -45,15 +45,9 @@ $t = Space::findByID(1);
 
 
 <?php
-    echo "\n\n\nFINDING CYBERSPACE AND CHARLOTTE, NC \n\n\n";
-    $s = Space::findByTypeAndLocation("Cyberspace", "Charlotte", "NC");
-    echo $s;
-?>
-
-<?php
-    echo "\n\n\nSET CITY \n\n\n";
-    $s = Space::findByID(6);
-    $s->setCity("Charlotte");
+    echo "\n\n\nFINDING ID 4 \n\n\n";
+    $s = Space::findByID(4);
+    $s->delete();
 ?>
 
 <?php

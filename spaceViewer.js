@@ -1,8 +1,8 @@
-var url_base = "http://localhost/comp426_nebula";
+var url_base = "http://localhost/Github/comp426_nebula";
 
 $(document).ready(function() {
 
-    $('#hacker').on("click", function () { load_space_item_byType("Hackspace"); } );
+  //  $('#hacker').on("click", function () { load_space_item_byType("hack"); } );
 
 });
 

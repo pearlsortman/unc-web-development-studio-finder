@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Nebula | Available Spaces</title>
+
+    <link type="text/css" rel="stylesheet" href="css/search.css">
+    <link type="image/png" rel="icon" href="nebfavi.ico">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="space.js"></script>
+
+    <script>
+        $.ajax("http://localhost/Github/comp426_nebula/space_json.php/hack", {
+        type: "GET",
+        dataType: "json",
+        success: function(space_json, status, jqXHR) {
+            for (var i = 0; i < space_json.length; i++) {
+                var s = new Space(space_json[i]);
+                $('#results').append(s.makeSearchResultDiv());
+            }
+        }
+        });
+        </script>
+
+    <style type="text/css">
+    html, body, #map-canvas {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpoimjrIsfJvzEwdo56mTU9IwRQMAy9RU">
+    </script>
+    <script type="text/javascript" src="mapjs.js"></script>
+    <style type="text/css">
+    #map {
+        width: 100%;
+        height: 50%;
+    }
+    h1,
+    p {
+        text-align: center;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div id="map"></div>
+    <br>
+    <p><b>Address</b>: <span id="address"></span>
+    </p>
+    <p id="error"></p>
+    <br>
+    <div class="wrapper">
+        <div id="NotHere">
+            <a href="add-space.html">Not your scene? Add a space!</a>
+            <!--Add the link for the add a space page-->
+        </div>
+
+        <div id="results" class="content">
+
+        </div>
+    </div>
+</body>
+<html>
