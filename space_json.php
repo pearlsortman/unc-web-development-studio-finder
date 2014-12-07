@@ -19,6 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		// Interpret <type> as string
 		$type = trim($path_components[1]);
 
+		if ($type == 'all') {
+		$space = Space::getAll();
+
+			// Generate JSON encoding as response
+		header("Content-type: application/json");
+		print($space);
+		exit();
+		}
+
 		// Look up object via ORM. $space is an array of json_encoded values
 		$space = Space::findByType($type);
 

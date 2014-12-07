@@ -85,18 +85,40 @@ class Space {
 		return null;
 	}
 
-	public static function getAllIDs() {
+	public static function getAll() {
     	$con = mysqli_connect('classroom.cs.unc.edu', 'sortman', 'ProjectNebula', 'sortmandb');
 
-    	$result = $con->query("select spaceID from a6_spaces");
-    	$id_array = array();
+    	$result = $con->query("SELECT * FROM a6_spaces");
 
-    	if ($result) {
-      		while ($next_row = $result->fetch_array()) {
-				$id_array[] = intval($next_row['spaceID']);
-      		}
-    	}
-    return $id_array;
+      $json = array();
+        if ($result->num_rows != 0)
+        {
+            while ($row = $result->fetch_array())
+            {
+                $json[]= array(
+                    'spaceID' => $row[0],
+                    'name' => $row[1],
+                    'type' => $row[2],
+                    'street' => $row[3],
+                    'city' => $row[4],
+                    'state' => $row[5],
+                    'zip' => $row[6],
+                    'logo' => $row[7],
+                    'description' => $row[8],
+                    'website' => $row[9],
+                    'numberSeats' => $row[10],
+                    'hasWifi' => $row[11],
+                    'hasParking' => $row[12],
+                    'hasDesk' => $row[13],
+                    'hasBreakroom' => $row[14],
+                    'hasPrinting' => $row[15],
+                    'hasStorage' => $row[16]
+                );
+            }
+            header('Content-Type: application/json');
+            $jsonString = json_encode($json);
+         }
+         return $jsonString;
   	}
 
     public static function findByType($type) {

@@ -18,6 +18,18 @@ var Space = function(space_json) {
 	this.hasStorage =	space_json.hasStorage;
 };
 
+ function sendData(id)
+            {
+        // Initialize packed or we get the word 'undefined'
+        var packed = id;
+        // for (i = 0; (i < data.length); i++) {
+        //     if (i > 0) {
+        //      packed += ",";
+        //     }
+        //     packed += escape(data[i]);
+        // }
+        window.location = "space-profile.html?" + packed;
+        }
 Space.prototype.makeSearchResultDiv = function() {
 	var spaceDiv = $("<div></div>");
 	spaceDiv.addClass('result');
@@ -43,7 +55,15 @@ Space.prototype.makeSearchResultDiv = function() {
 	tr_city_state_zip.html(this.city + ", " + this.state + " " + this.zip);
 	tr_city_state_zip.appendTo(divTable);
 
+	var sendDataContents = "Go to Page Two";
+	var sendData = $("<a href='javascript:sendData(" + this.spaceID + ");'></a>");
+	sendData.html(sendDataContents);
+	sendData.appendTo(spaceDiv);
+
 	spaceDiv.appendTo($('#results'));
+
+
+
 
 	return spaceDiv;
 };
