@@ -52,6 +52,17 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		$city = trim($path_components[1]);
 		$state = trim($path_components[2]);
 
+		if ($city == "id") {
+			$id = $state;
+
+			$space = Space::findByID($id);
+
+			// Generate JSON encoding as response
+			header("Content-type: application/json");
+			print($space->getJSON());
+			exit();
+		}
+
 		// Look up object via ORM.
 		$space = Space::findByLocation($city, $state);
 
