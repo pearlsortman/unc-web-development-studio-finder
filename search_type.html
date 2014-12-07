@@ -14,6 +14,8 @@
     var type = location.search;
     type = type.substring(1);
 
+    decodeURI(type);
+
         $.ajax("http://localhost/comp426_nebula/space_json.php/" + type, {
         type: "GET",
         dataType: "json",

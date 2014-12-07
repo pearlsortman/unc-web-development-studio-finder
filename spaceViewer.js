@@ -3,9 +3,7 @@ var url_base = "http://localhost/Github/comp426_nebula";
 $(document).ready(function () {
     $('#hacker').click(function (e) {
         e.preventDefault();
-        var city = document.getElementById("city").value;
-        var state = document.getElementById("state").value;
-        sendData("hack/city/state");
+        sendData("hack");
     });
 
        $('#writing').click(function (e) {
@@ -36,7 +34,8 @@ $(document).ready(function () {
 
 
 var sendData = function (type) {
-
-    var packed = type;
+    var city = document.getElementById("city").value;
+    var state = document.getElementById("state").value;
+    var packed = type + "/" + city + "/" + state;
     window.location = "search_type.html?" + packed;
 };  
