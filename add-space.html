@@ -9,6 +9,9 @@
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,200italic,300,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="icon" type="image/png" href="nebfavi.ico">
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="add-space.js"></script>
 </head>
 
 <body>
@@ -18,21 +21,54 @@
 			<h1>This Is Where It All Begins.</h1>
 			<h3>If you've stumbled here, then chances are your star has yet to form. To add a new space, simply fill out the form below and wait 2-3 business days for the updated listing. Building a universe takes time and it all begins with you.</h3>
 			
-			<form method="POST" action="contact-engine.php">
-				<label for="space">Name of Your Space:</label>
-				<input type="text" name="space" id="space" />
+			<form id="newSpaceForm" method="POST">
+				<label for="name">Space Name:</label>
+				<input type="text" name="name" id="name" />
 
-				<label for="Name">Your Name:</label>
-				<input type="text" name="Name" id="Name" />
+				<label for="type">Space Type:</label>
+				<input type="text" name="type" id="type" />
 				
-				<label for="City">City:</label>
-				<input type="text" name="City" id="City" />
+				<label for="street">Street Address:</label>
+				<input type="text" name="street" id="street" />
 	
-				<label for="Email">Email:</label>
-				<input type="text" name="Email" id="Email" />
+				<label for="city">City:</label>
+				<input type="text" name="street" id="street" />
 				
-				<label for="Descript">Message:</label><br />
-				<textarea name="Descript" rows="30" cols="50" id="Descript"></textarea>
+				<label for="state">State:</label>
+				<input type="text" name="state" id="state" />
+
+				<label for="zip">Zip:</label>
+				<input type="text" name="zip" id="zip" />
+
+				<label for="logo">Image Gallery:</label>
+				<input type="text" name="logo" id="logo" />
+
+				<label for="description">Description:</label>
+				<input type="text" name="description" id="description" />
+
+				<label for="website">Website:</label>
+				<input type="text" name="website" id="website" />
+
+				<label for="numberSeats">Number of Seats:</label>
+				<input type="text" name="numberSeats" id="numberSeats" />
+
+				<label for="hasWifi">Wifi available? (y/n):</label>
+				<input type="text" name="hasWifi" id="hasWifi" />
+
+				<label for="hasParking">Parking available? (y/n):</label>
+				<input type="text" name="hasParking" id="hasParking" />
+
+				<label for="hasDesk">Personal desk-space? (y/n):</label>
+				<input type="text" name="hasDesk" id="hasDesk" />
+
+				<label for="hasBreakroom">Breakroom? (y/n):</label>
+				<input type="text" name="hasBreakroom" id="hasBreakroom" />
+
+				<label for="hasPrinting">Printing station? (y/n):</label>
+				<input type="text" name="hasPrinting" id="hasPrinting" />
+
+				<label for="hasStorage">Secure storage? (y/n):</label>
+				<input type="text" name="hasStorage" id="hasStorage" />
 
 				<input type="submit" name="submit" value="Submit" class="submit-button" />
 			</form>

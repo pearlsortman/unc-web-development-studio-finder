@@ -106,7 +106,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 		
 } else if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
 	// Either creating or updating
 
 	// Following matches /space.php/<id> form
@@ -295,13 +294,17 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		print($space->getJSON());
 		exit();
 	} else {
-
+		print("in the damn else");
 		// Creating a new Space item
 
 		// Validate values
 		$new_name = false;
+		print("$new_name should be false: " + $new_name);
 		if (isset($_REQUEST['name'])) {
+			print("isset being reached");
+			print("request name: " + $_REQUEST['name']);
 			$new_name = trim($_REQUEST['name']);
+			print("new $new_name: " + $new_name);
 			if ($new_name == "") {
 				header("HTTP/1.0 400 Bad Request");
 				print("Bad name");
@@ -310,7 +313,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		}
 
 		$new_type = false;
-		if (isset($REQUEST['type'])) {
+		if (isset($_REQUEST['type'])) {
 			$new_type = trim($_REQUEST['type']);
 			if ($new_type == "") {
 				header("HTTP/1.0 400 Bad Request");
@@ -320,7 +323,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		}
 
 		$new_street = false;
-		if (isset($REQUEST['street'])) {
+		if (isset($_REQUEST['street'])) {
 			$new_street = trim($_REQUEST['street']);
 			if ($new_street == "") {
 				header("HTTP/1.0 400 Bad Request");
@@ -330,7 +333,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		}
 
 		$new_description = false;
-		if (isset($REQUEST['description'])) {
+		if (isset($_REQUEST['description'])) {
 			$new_description = trim($_REQUEST['description']);
 			if ($new_description == "") {
 				header("HTTP/1.0 400 Bad Request");
@@ -340,7 +343,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		}
 
 		$new_website = false;
-		if (isset($REQUEST['website'])) {
+		if (isset($_REQUEST['website'])) {
 			$new_website = trim($_REQUEST['website']);
 			if ($new_website == "") {
 				header("HTTP/1.0 400 Bad Request");
@@ -350,7 +353,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		}
 
 		$new_city = false;
-		if (isset($REQUEST['city'])) {
+		if (isset($_REQUEST['city'])) {
 			$new_city = trim($_REQUEST['city']);
 			if ($new_city == "") {
 				header("HTTP/1.0 400 Bad Request");
@@ -360,7 +363,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		}
 
 		$new_state = false;
-		if (isset($REQUEST['state'])) {
+		if (isset($_REQUEST['state'])) {
 			$new_state= trim($_REQUEST['state']);
 			if ($new_state == "") {
 				header("HTTP/1.0 400 Bad Request");
