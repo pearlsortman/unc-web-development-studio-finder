@@ -14,7 +14,7 @@
     var type = location.search;
     type = type.substring(1);
 
-        $.ajax("http://localhost/Github/comp426_nebula/space_json.php/" + type, {
+        $.ajax("http://localhost/comp426_nebula/space_json.php/" + type, {
         type: "GET",
         dataType: "json",
         success: function(space_json, status, jqXHR) {
