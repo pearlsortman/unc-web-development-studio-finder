@@ -45,9 +45,9 @@ $t = Space::findByID(1);
 
 
 <?php
-    echo "\n\n\nFINDING ID 4 \n\n\n";
+/*    echo "\n\n\nFINDING ID 4 \n\n\n";
     $s = Space::findByID(4);
-    $s->delete();
+    $s->delete();*/
 ?>
 
 <?php
@@ -57,9 +57,9 @@ $t = Space::findByID(1);
 ?>
 
 <?php
-    // $s = Space::create("Kevin's Space", "Hackspace", "Milk Dr",
-    //     "Charlotte", "NC", 24924, 0, "It's the best space there is... second to David's!",
-    //     "www.kevin.com", 63, 1, 1, 1, 1, 1, 0);
+    $s = Space::create("Kevin's Space", "Hackspace", "Milk Dr",
+        "Durham", "NC", 24924, "This is the logo", "It's the best space there is... second to David's!",
+        "www.kevin.com", 63, 1, 1, 1, 1, 1, 0);
 ?>
 
 <?php

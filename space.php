@@ -32,11 +32,13 @@ class Space {
     $sqlState =       "'" . $mysqli->real_escape_string($state) . "', ";
     $sqlDescription = "'" . $mysqli->real_escape_string($description) . "', ";
     $sqlWebsite =     "'" . $mysqli->real_escape_string($website) . "', ";
+    $sqlLogo =        "'" . $mysqli->real_escape_string($logo) . "', ";
 
-		$sql = ("INSERT INTO a6_spaces VALUES (0, " . $sqlName . $sqlType . $sqlStreet . $sqlCity . $sqlState . $zip . ", " . $logo . 
-                           ", " . $sqlDescription . $sqlWebsite . $numberSeats . ", " . $hasWifi . ", " . $hasParking . 
+		$sql = ("INSERT INTO a6_spaces VALUES (0, " . $sqlName . $sqlType . $sqlStreet . $sqlCity . $sqlState . $zip . ", " . $sqlLogo . 
+                          $sqlDescription . $sqlWebsite . $numberSeats . ", " . $hasWifi . ", " . $hasParking . 
 			                     ", " . $hasDesk . ", " . $hasBreakroom . ", " . $hasPrinting . ", " . $hasStorage . ")");
 
+    print($sql);
     if (mysqli_query($mysqli, $sql)) {
       echo "*******************CREATED RECORD \n";
       $new_id = $mysqli->insert_id;

@@ -294,17 +294,12 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		print($space->getJSON());
 		exit();
 	} else {
-		print("in the damn else");
 		// Creating a new Space item
 
 		// Validate values
 		$new_name = false;
-		print("$new_name should be false: " + $new_name);
 		if (isset($_REQUEST['name'])) {
-			print("isset being reached");
-			print("request name: " + $_REQUEST['name']);
 			$new_name = trim($_REQUEST['name']);
-			print("new $new_name: " + $new_name);
 			if ($new_name == "") {
 				header("HTTP/1.0 400 Bad Request");
 				print("Bad name");
@@ -418,9 +413,9 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
     	}
 
     	// Create new Space via ORM
-    	$new_space = Space::create($name, $type, $street, $city, $state,
-    		$zip, $logo, $description, $website, $numberSeats, $hasWifi,
-    		$hasParking, $hasDesk, $hasBreakroom, $hasPrinting, $hasStorage);
+    	$new_space = Space::create($new_name, $new_type, $new_street, $new_city, $new_state,
+    		$new_zip, $new_logo, $new_description, $new_website, $new_numberSeats, $new_hasWifi,
+    		$new_hasParking, $new_hasDesk, $new_hasBreakroom, $new_hasPrinting, $new_hasStorage);
 
     	// Report if failed
     	if ($new_space == null) {
