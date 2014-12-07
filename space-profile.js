@@ -49,7 +49,7 @@ Space.prototype.makeProfileDiv = function() {
 	var amenitiesRow1 =		$("<tr></tr>");
 	var amenitiesRow2 =		$("<tr></tr>");
 
-	var td_wifi =			$("<td>" + this.hasWifi + "</td>");
+	var td_wifi = $("<td>Wifi: " + this.hasWifi + "</td>");
 	if (this.hasWifi === 0) {
 		td_wifi.html("no");
 		td_wifi.addClass("no");
@@ -59,7 +59,7 @@ Space.prototype.makeProfileDiv = function() {
 	}
 	td_wifi.appendTo(amenitiesRow1);
 
-	var td_parking =		$("<td>" + this.hasParking + "</td>");
+	var td_parking = $("<td>Parking: " + this.hasParking + "</td>");
 	if (this.hasParking === 0) {
 		td_parking.html("no");
 		td_parking.addClass("no");
@@ -69,7 +69,7 @@ Space.prototype.makeProfileDiv = function() {
 	}
 	td_parking.appendTo(amenitiesRow1);
 
-	var td_storage =		$("<td>" + this.hasStorage + "</td>");
+	var td_storage = $("<td>Storage: " + this.hasStorage + "</td>");
 	if (this.hasStorage === 0) {
 		td_storage.html("no");
 		td_storage.addClass("no");
@@ -80,11 +80,9 @@ Space.prototype.makeProfileDiv = function() {
 	td_storage.appendTo(amenitiesRow1);
 
 	amenitiesRow1.appendTo(amenitiesTable);
+	
 
-
-
-
-	var td_desk = $("<td>" + this.hasDesk + "</td>");
+	var td_desk = $("<td>Personal Desks: " + this.hasDesk + "</td>");
 	if (this.hasDesk === 0) {
 		td_desk.html("no");
 		td_desk.addClass("no");
@@ -92,9 +90,9 @@ Space.prototype.makeProfileDiv = function() {
 		td_desk.html("yes");
 		td_desk.addClass("yes");
 	}
-	td_desk.appendTo(amenitiesRow1);
+	td_desk.appendTo(amenitiesRow2);
 
-	var td_breakroom =		$("<td>" + this.hasBreakroom + "</td>");
+	var td_breakroom = $("<td>Breakroom: " + this.hasBreakroom + "</td>");
 	if (this.hasBreakroom === 0) {
 		td_breakroom.html("no");
 		td_breakroom.addClass("no");
@@ -102,17 +100,17 @@ Space.prototype.makeProfileDiv = function() {
 		td_breakroom.html("yes");
 		td_breakroom.addClass("yes");
 	}
-	td_breakroom.appendTo(amenitiesRow1);
+	td_breakroom.appendTo(amenitiesRow2);
 
-	var td_storage =		$("<td>" + this.hasStorage + "</td>");
-	if (this.hasStorage === 0) {
-		td_storage.html("no");
-		td_storage.addClass("no");
+	var td_printing = $("<td>Printing: " + this.hasPrinting + "</td>");
+	if (this.hasPrinting === 0) {
+		td_printing.html("no");
+		td_printing.addClass("no");
 	} else {
-		td_storage.html("yes");
-		td_storage.addClass("yes");
+		td_printing.html("yes");
+		td_printing.addClass("yes");
 	}
-	td_storage.appendTo(amenitiesRow1);
+	td_printing.appendTo(amenitiesRow2);
 
 	amenitiesRow2.appendTo(amenitiesTable);
 
