@@ -11,7 +11,7 @@
     <script type="text/javascript" src="space.js"></script>
 
     <script>
-        $.ajax("http://localhost/Github/comp426_nebula/space_json.php/all", {
+        $.ajax("http://localhost/comp426_nebula/space_json.php/all", {
         type: "GET",
         dataType: "json",
         success: function(space_json, status, jqXHR) {
