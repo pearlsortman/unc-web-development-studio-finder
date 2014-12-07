@@ -46,8 +46,9 @@ Space.prototype.makeProfileDiv = function() {
 
 	var h3_amenities =		$("<h3>Amenities</h3>");
 	var amenitiesTable =	$("<table></table>");
-
 	var amenitiesRow1 =		$("<tr></tr>");
+	var amenitiesRow2 =		$("<tr></tr>");
+
 	var td_wifi =			$("<td>" + this.hasWifi + "</td>");
 	if (this.hasWifi === 0) {
 		td_wifi.html("no");
@@ -56,22 +57,64 @@ Space.prototype.makeProfileDiv = function() {
 		td_wifi.html("yes");
 		td_wifi.addClass("yes");
 	}
+	td_wifi.appendTo(amenitiesRow1);
+
 	var td_parking =		$("<td>" + this.hasParking + "</td>");
 	if (this.hasParking === 0) {
-		td_wifi.html("no");
-		td_wifi.addClass("no");
+		td_parking.html("no");
+		td_parking.addClass("no");
 	} else {
-		td_wifi.html("yes");
-		td_wifi.addClass("yes");
+		td_parking.html("yes");
+		td_parking.addClass("yes");
 	}
+	td_parking.appendTo(amenitiesRow1);
+
 	var td_storage =		$("<td>" + this.hasStorage + "</td>");
-	if (this.hasWifi === 0) {
-		td_wifi.html("no");
-		td_wifi.addClass("no");
+	if (this.hasStorage === 0) {
+		td_storage.html("no");
+		td_storage.addClass("no");
 	} else {
-		td_wifi.html("yes");
-		td_wifi.addClass("yes");
+		td_storage.html("yes");
+		td_storage.addClass("yes");
 	}
+	td_storage.appendTo(amenitiesRow1);
+
+	amenitiesRow1.appendTo(amenitiesTable);
+
+
+
+
+	var td_desk = $("<td>" + this.hasDesk + "</td>");
+	if (this.hasDesk === 0) {
+		td_desk.html("no");
+		td_desk.addClass("no");
+	} else {
+		td_desk.html("yes");
+		td_desk.addClass("yes");
+	}
+	td_desk.appendTo(amenitiesRow1);
+
+	var td_breakroom =		$("<td>" + this.hasBreakroom + "</td>");
+	if (this.hasBreakroom === 0) {
+		td_breakroom.html("no");
+		td_breakroom.addClass("no");
+	} else {
+		td_breakroom.html("yes");
+		td_breakroom.addClass("yes");
+	}
+	td_breakroom.appendTo(amenitiesRow1);
+
+	var td_storage =		$("<td>" + this.hasStorage + "</td>");
+	if (this.hasStorage === 0) {
+		td_storage.html("no");
+		td_storage.addClass("no");
+	} else {
+		td_storage.html("yes");
+		td_storage.addClass("yes");
+	}
+	td_storage.appendTo(amenitiesRow1);
+
+	amenitiesRow2.appendTo(amenitiesTable);
 
 
 
