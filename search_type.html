@@ -11,7 +11,10 @@
     <script type="text/javascript" src="space.js"></script>
 
     <script>
-        $.ajax("http://localhost/Github/comp426_nebula/space_json.php/music", {
+    var type = location.search;
+    type = type.substring(1);
+
+        $.ajax("http://localhost/Github/comp426_nebula/space_json.php/" + type, {
         type: "GET",
         dataType: "json",
         success: function(space_json, status, jqXHR) {
@@ -22,6 +25,7 @@
         }
         });
         </script>
+
 
     <style type="text/css">
     html, body, #map-canvas {
