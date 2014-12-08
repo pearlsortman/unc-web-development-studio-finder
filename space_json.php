@@ -1,5 +1,4 @@
 <?php
-
 require_once('space.php');
 
 $path_components = explode('/', $_SERVER['PATH_INFO']);

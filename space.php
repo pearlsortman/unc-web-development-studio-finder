@@ -208,6 +208,8 @@ class Space {
       $sqlState = "'" . $con->real_escape_string($state) . "'";
 
       $result = $con->query("SELECT * FROM a6_spaces WHERE " . "type=" . $sqlType . "city=" . $sqlCity . "state=" . $sqlState);
+      print($result->num_rows);
+      print($result);
 
             $json = array();
         if ($result->num_rows != 0)
@@ -235,7 +237,9 @@ class Space {
                 );
             }
             header('Content-Type: application/json');
+            print($json);
             $jsonString = json_encode($json);
+            print($jsonString);
          }
          return $jsonString;
     }
