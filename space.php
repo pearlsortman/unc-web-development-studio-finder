@@ -194,6 +194,7 @@ class Space {
                 );
             }
             header('Content-Type: application/json');
+            print($json);
             $jsonString = json_encode($json);
          }
          return $jsonString;
