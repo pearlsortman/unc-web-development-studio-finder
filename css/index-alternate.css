@@ -25,10 +25,17 @@ body {
 
 a{
     text-decoration: none;
+    padding: 0px;
 }
 
 a :hover{
-    color: #CC0066;
+    color: #C5DFDF;
+    background-color:rgba(63,147,147, 0.75);
+    transition: all 1s;
+    -webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+border:1px solid #FFFFCC;
 }
 
 .secondaryDiv {
@@ -68,16 +75,6 @@ a :hover{
     text-align: center;
 }
 
-/*BUTTON STYLING*/
-
-.button:hover{ /*all will have the same hover style TBD*/
-
-}
-
-.button{ /*All will have the same shape*/
-
-}
-
 /*HEADER STYLING*/
 h1{
 	font-weight: 200;
@@ -91,22 +88,22 @@ h1{
 .search-rounded { 
 	padding:6px 15px 6px 15px;
 	margin-top:10px;
-    border-radius:15px; 
+        border-radius:15px; 
     -moz-border-radius:15px; 
     -webkit-border-radius:15px; 
 }
 
 input[type=text]{
-	color:#bcbcbc;
+	color: #FFFFCC;
 	font-size: 1em;
 	font-family: 'Titillium Web', sans-serif;
-    width: 300px;
+    width: 600px;
 }
 
 #search-bar input[type=text]{
-	border:1px solid rgba(63,147,147, 0.8);
-	background-color:rgba(63,147,147, 0.8);
-	color:#505358;
+	border:1px solid #FFFFCC;
+	background-color:rgba(63,147,147, 0.75);
+	color: #FFFFCC;
 	height: 40px;
 }
 
@@ -205,7 +202,7 @@ input[type=text]{
     padding: 10px 5px;
     font-style: italic;
     margin: 0 30px;
-    font-size: 12px;
+    font-size: 1em;
     border-top: 1px solid rgba(255,255,255,0.5);
     opacity: 0;
     transition: all 1s ease-in-out 0.4s;
