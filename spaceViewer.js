@@ -1,4 +1,4 @@
-var url_base = "http://localhost/Github/comp426_nebula";
+var url_base = "http://localhost/comp426_nebula";
 
 $(document).ready(function () {
     $('#hacker').click(function (e) {
